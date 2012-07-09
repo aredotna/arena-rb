@@ -4,8 +4,8 @@ require File.expand_path('../lib/arena/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["dzuc"]
   gem.email         = ["everyone@are.na"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = "Wrapper for Arena's API"
+  gem.summary       = "Wrapper for Arena's API"
   gem.homepage      = "http://are.na/"
 
   gem.files         = `git ls-files`.split($\)
