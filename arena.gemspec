@@ -14,6 +14,10 @@ Gem::Specification.new do |gem|
   gem.name          = "arena"
   gem.require_paths = ["lib"]
   gem.version       = Arena::VERSION
+
   gem.add_development_dependency 'rake'
+
+  gem.add_runtime_dependency 'json'
+  gem.add_runtime_dependency 'httparty'
 
 end
