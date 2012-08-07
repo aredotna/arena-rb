@@ -17,6 +17,13 @@ module Arena
         @client = Arena::Client.new(options)
       end
     end
+
+  private
+
+    def method_missing(method, *args, &block)
+      self.client.send(method, *args, &block)
+    end
+
   end
 end
 
