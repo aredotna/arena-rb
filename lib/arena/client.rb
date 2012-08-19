@@ -49,12 +49,3 @@ module Arena
   end
 
 end
-
-
-class Hash
-  def to_openstruct
-         mapped = {}
-         each{ |key,value| mapped[key] = value.to_openstruct }
-         OpenStruct.new(mapped)
-  end
-end
