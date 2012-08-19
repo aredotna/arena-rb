@@ -1,7 +1,7 @@
 module Arena
   module Default
-    BASE_DOMAIN = "are.na" unless defined? BASE_DOMAIN
-    API_VERSION = "v1" unless defined? API_VERSION
+    BASE_DOMAIN = "staging.are.na" unless defined? BASE_DOMAIN
+    API_VERSION = "v2" unless defined? API_VERSION
 
     class << self
       # @return [Hash]
