@@ -42,11 +42,7 @@ module Arena
 
     def get_json(path, opts)
       options = { :query => opts }
-      remove_root(
-        JSON.parse(
-            (self.class.get "http://#{@base_domain}/api/#{@api_version}#{path}", options).body
-          )
-        )
+      JSON.parse((self.class.get "http://#{@base_domain}/api/#{@api_version}#{path}", options).body)
     end
 
     def remove_root(object)
