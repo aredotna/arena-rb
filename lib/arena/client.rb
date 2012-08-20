@@ -39,7 +39,7 @@ module Arena
     end
 
     def search(query, option={})
-      get_json "/api/v2/search?q=#{query}", options
+      get_json "/search?q=#{query}", options
     end
 
     private
