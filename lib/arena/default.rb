@@ -1,6 +1,6 @@
 module Arena
   module Default
-    BASE_DOMAIN = "staging.are.na" unless defined? BASE_DOMAIN
+    BASE_DOMAIN = "are.na" unless defined? BASE_DOMAIN
     API_VERSION = "v2" unless defined? API_VERSION
 
     class << self
