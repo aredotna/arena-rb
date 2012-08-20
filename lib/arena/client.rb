@@ -22,6 +22,10 @@ module Arena
       get_json "/channels/#{id}", options
     end
 
+    def channel(id, options={})
+      get_json "/channels/#{id}/thumb", options
+    end
+
     def block(id, options={})
       get_json "/blocks/#{id}", options
     end
