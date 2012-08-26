@@ -22,7 +22,7 @@ module Arena
       get_json "/channels/#{id}", options
     end
 
-    def channel(id, options={})
+    def channel_thumb(id, options={})
       get_json "/channels/#{id}/thumb", options
     end
 
