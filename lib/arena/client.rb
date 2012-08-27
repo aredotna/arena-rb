@@ -50,10 +50,10 @@ module Arena
 
     def get_json(path, opts, root=false)
       options = { :query => opts }
-      root ? parse : remove_root(parse)
+      root ? parse(path, opts) : remove_root(parse(path, opts))
     end
 
-    def parse
+    def parse(path, opts)
       JSON.parse(
         (self.class.get "http://#{@base_domain}/api/#{@api_version}#{path}", options).body
       ) 
