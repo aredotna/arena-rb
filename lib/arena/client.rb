@@ -27,7 +27,7 @@ module Arena
     end
 
     def channel_channels(id, options={})
-      get_json "/channels/#{id}/channels", options, true
+      get_json "/channels/#{id}/channels", options
     end
 
     def block(id, options={})
@@ -48,9 +48,9 @@ module Arena
 
     private
 
-    def get_json(path, opts, root=false)
+    def get_json(path, opts)
       options = { :query => opts }
-      root ? parse(path, opts) : remove_root(parse(path, opts))
+      parse(path, opts)
     end
 
     def parse(path, opts)
