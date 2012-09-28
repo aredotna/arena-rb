@@ -46,6 +46,10 @@ module Arena
       get_json "/search?q=#{query}", options
     end
 
+    def check_base_path
+      "http://#{@base_domain}/#{@api_version}"
+    end
+
     private
 
     def get_json(path, opts)
