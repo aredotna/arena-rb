@@ -55,7 +55,7 @@ module Arena
 
     def parse(path, opts)
       JSON.parse(
-        (self.class.get "http://#{@base_domain}/api/#{@api_version}#{path}", options).body
+        (self.class.get "http://#{@base_domain}/#{@api_version}#{path}", options).body
       ) 
     end
 
