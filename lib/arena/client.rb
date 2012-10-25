@@ -69,11 +69,11 @@ module Arena
     def to_ostruct(obj)
       if obj.is_a? Hash
         open_struct = OpenStruct.new
-        obj.each { |key, value| open_struct.send("#{key}=", to_ostruct(value))}
+        obj.each { |key, value| open_struct.send("#{key}=", to_ostruct(value)) }
         return open_struct
       
       elsif obj.is_a? Array
-         obj = obj.map { |value| to_ostruct(value) }
+        obj = obj.map { |value| to_ostruct(value) }
       end
 
       return obj
