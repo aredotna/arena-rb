@@ -1,6 +1,7 @@
 require 'arena/configurable'
 require 'httparty'
 require 'json'
+require 'ostruct'
 
 module Arena
 
@@ -58,14 +59,26 @@ module Arena
     end
 
     def parse(path, opts)
-      JSON.parse(
-        (self.class.get "http://#{@base_domain}/#{@api_version}#{path}", options).body
-      ) 
+      to_ostruct(
+        JSON.parse(
+            (self.class.get "http://#{@base_domain}/#{@api_version}#{path}", options).body
+          )
+        )
     end
 
-    def remove_root(object)
-      object.first[1]
+    def to_ostruct(obj)
+      if obj.is_a? Hash
+        open_struct = OpenStruct.new
+        obj.each { |key, value| open_struct.send("#{key}=", to_ostruct(value))}
+        return open_struct
+      
+      elsif obj.is_a? Array
+         obj = obj.map { |value| to_ostruct(value) }
+      end
+
+      return obj
     end
+
   end
 
 end
