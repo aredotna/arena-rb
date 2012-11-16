@@ -1,13 +1,15 @@
 require 'arena/configurable'
+require 'arena/error'
+require 'arena/api'
 require 'httparty'
 require 'json'
-require 'ostruct'
 
 module Arena
 
   class Client
     include HTTParty
     include Arena::Configurable
+    include Arena::API
 
     def initialize(options={})
       Arena::Configurable.keys.each do |key|
@@ -15,68 +17,20 @@ module Arena
       end
     end
 
-    def channels(options={})
-      get_json "/channels", options
-    end
-
-    def channel(id, options={})
-      get_json "/channels/#{id}", options
-    end
-
-    def channel_thumb(id, options={})
-      get_json "/channels/#{id}/thumb", options
-    end
-
-    def channel_channels(id, options={})
-      get_json "/channels/#{id}/channels", options
-    end
-
-    def block(id, options={})
-      get_json "/blocks/#{id}", options
-    end
-
-    def user(id, options={})
-      get_json "/users/#{id}", options
-    end
-
-    def user_channels(id, options={})
-      get_json "/users/#{id}", options
-    end
-
-    def search(query, option={})
-      get_json "/search?q=#{query}", options
-    end
-
-    def check_base_path
-      "http://#{@base_domain}/#{@api_version}"
+    # Performs HTTP GET POST PUT and DELETE requests
+    %w(get post put delete).each do |method|
+      define_method(method) do |path, options={}|
+        options = { :query => options }
+        request(__method__, path, options)
+      end
     end
 
     private
 
-    def get_json(path, opts)
-      options = { :query => opts }
-      parse(path, opts)
-    end
-
-    def parse(path, opts)
-      to_ostruct(
-        JSON.parse(
-            (self.class.get "http://#{@base_domain}/#{@api_version}#{path}", options).body
-          )
-        )
-    end
-
-    def to_ostruct(obj)
-      if obj.is_a? Hash
-        open_struct = OpenStruct.new
-        obj.each { |key, value| open_struct.send("#{key}=", to_ostruct(value)) }
-        return open_struct
-      
-      elsif obj.is_a? Array
-        obj = obj.map { |value| to_ostruct(value) }
-      end
-
-      return obj
+    def request(method, path, options)
+      JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body
+    rescue
+      raise Arena::Error
     end
 
   end
