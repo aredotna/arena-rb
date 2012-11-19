@@ -11,7 +11,8 @@ module Arena
     end
 
     def channel_thumb(id, options={})
-      get "/channels/#{id}/thumb", options
+      # get "/channels/#{id}/thumb", options
+      object_from_response(Arena::Channel, :get, "/channels/#{id}/thumb", options)
     end
 
     def channel_channels(id, options={})
