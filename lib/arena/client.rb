@@ -27,7 +27,7 @@ module Arena
       end
     end
 
-    private
+  private
 
     def request(method, path, options)
       JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body
