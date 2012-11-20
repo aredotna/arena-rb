@@ -11,7 +11,6 @@ module Arena
     end
 
     def channel_thumb(id, options={})
-      # get "/channels/#{id}/thumb", options
       object_from_response(Arena::Channel, :get, "/channels/#{id}/thumb", options)
     end
 
@@ -24,7 +23,7 @@ module Arena
     end
 
     def user(id, options={})
-      get "/users/#{id}", options
+      object_from_response(Arena::User, :get, "/users/#{id}", options)
     end
 
     def user_channels(id, options={})
@@ -35,7 +34,7 @@ module Arena
       get "/search?q=#{query}", options
     end
 
-    private
+  private
 
     def object_from_response(klass, request_method, url, options={})
       response = send(request_method.to_sym, url, options)

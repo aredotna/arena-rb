@@ -20,7 +20,9 @@ module Arena
     # Performs HTTP GET POST PUT and DELETE requests
     %w(get post put delete).each do |method|
       define_method(method) do |path, options={}|
-        options = { :query => options }
+        options = { query: options,
+                    headers: { 'Authorization' => "Bearer #{@access_token}" } }
+                    
         request(__method__, path, options)
       end
     end

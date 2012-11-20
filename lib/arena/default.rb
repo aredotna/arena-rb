@@ -3,7 +3,6 @@ module Arena
     BASE_DOMAIN = "api.are.na" unless defined? BASE_DOMAIN
     API_VERSION = "v2" unless defined? API_VERSION
 
-
     class << self
       # @return [Hash]
       def options
@@ -19,7 +18,7 @@ module Arena
       end
 
       def application_id
-        ENV['APP_ID']
+        ENV['APPLICATION_ID']
       end
 
       def application_secret

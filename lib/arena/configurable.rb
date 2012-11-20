@@ -1,16 +1,17 @@
 module Arena
   module Configurable
-
-    CONFIG_KEYS = [
-      :base_domain,
-      :api_version,
-    ] unless defined? CONFIG_KEYS
-
-    attr_accessor *CONFIG_KEYS
+    attr_writer :application_id, :application_secret, :access_token
+    attr_accessor :base_domain, :api_version
 
     class << self
       def keys
-        @keys ||= CONFIG_KEYS
+        @keys ||= [
+          :base_domain,
+          :api_version,
+          :application_id,
+          :application_secret,
+          :access_token
+        ]
       end
     end
 
