@@ -1,15 +1,15 @@
 require 'arena/base'
-require 'arena/user'
 require 'arena/creatable'
+require 'arena/user'
+require 'arena/block'
 
 module Arena
   class Channel < Arena::Base
     include Arena::Creatable
 
-    attr_reader :id, :title, :created_at, :updated_at, :published, 
-      :open, :collaboration, :slug, :length, :kind, :status, :user_id,
-      :user, :total_pages, :current_page, :per, :follower_count,
-      :contents, :collaborators
+    attr_reader :id, :title, :published, :open, :collaboration,
+      :slug, :length, :kind, :status, :user_id, :user, :total_pages,
+      :current_page, :per, :follower_count, :collaborators
 
     def user
       @user ||= Arena::User.new(@attrs.dup['user'])
@@ -21,6 +21,10 @@ module Arena
 
     def _base_class
       @attrs.dup['base_class']
+    end
+
+    def contents
+      @contents ||= @attrs.dup['contents'].collect { |block| Arena::Block.new(block) }
     end
   end
 end

@@ -28,10 +28,10 @@ module Arena
     #
     # @param attrs [Hash]
     # @return [Arena::Base]
-    def update(attrs)
-      @attrs.update(attrs)
-      self
-    end
+    # def update(attrs)
+    #   @attrs.update(attrs)
+    #   self
+    # end
 
   protected
 
