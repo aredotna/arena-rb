@@ -1,6 +1,7 @@
 require 'arena/base'
 require 'arena/entity'
 require 'arena/entities/source'
+require 'arena/entities/image'
 require 'arena/creatable'
 
 module Arena
@@ -27,7 +28,7 @@ module Arena
     end
 
     def image
-      # todo
+      @image ||= Arena::Entity::Image.new(@attrs.dup['image'])
     end
 
     def connections
