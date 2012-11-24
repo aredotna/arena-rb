@@ -7,21 +7,24 @@ module Arena
     #
     # @return [Time]
     def created_at
-      @created_at ||= Time.parse(@attrs[:created_at]) if created?
+      @created_at ||= Time.parse(@attrs['created_at']) if created?
     end
 
+    # Time when the object was last updated on Arena
+    #
+    # @return [Time]
     def updated_at
-      @updated_at ||= Time.parse(@attrs[:updated_at]) if updated?
+      @updated_at ||= Time.parse(@attrs['updated_at']) if updated?
     end
 
   private
 
     def created?
-      !@attrs[:created_at].nil?
+      !@attrs['created_at'].nil?
     end
 
     def updated?
-      !@attrs[:created_at].nil?
+      !@attrs['updated_at'].nil?
     end
 
   end

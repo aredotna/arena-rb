@@ -1,15 +1,13 @@
-require 'time'
+require 'arena/creatable'
 require 'arena/entity'
 require 'arena/entities/version'
 
 module Arena
   class Entity
     class Image < Arena::Entity
-      attr_reader :filename, :content_type
+      include Arena::Creatable
 
-      def updated_at
-        @updated_at ||= Time.parse(@attrs[:updated_at]) if updated?
-      end
+      attr_reader :filename, :content_type
 
       %w(thumb display original).each do |method|
         define_method method do
@@ -17,13 +15,6 @@ module Arena
           instance_variable_get "@#{method}"
         end
       end
-
-    private
-      
-      def updated?
-        !@attrs[:created_at].nil?
-      end
-
     end
   end
 end
