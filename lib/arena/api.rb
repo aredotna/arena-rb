@@ -1,13 +1,13 @@
 require 'arena/user'
 require 'arena/block'
 require 'arena/channel'
+require 'arena/results'
 require 'arena/search_results'
 
 module Arena
   module API
     def channels(options={})
-      # What to do about metadata (pagination, etc) ? - Page object? Collection object?
-      collection_from_response(Arena::Channel, :get, "/channels", options, "channels")
+      object_from_response(Arena::ChannelResults, :get, "/channels", options)
     end
 
     def channel(id, options={})
@@ -28,10 +28,6 @@ module Arena
 
     def user(id, options={})
       object_from_response(Arena::User, :get, "/users/#{id}", options)
-    end
-
-    def user_channels(id, options={})
-      get "/users/#{id}", options
     end
 
     def search(query, option={})

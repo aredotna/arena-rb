@@ -24,7 +24,7 @@ module Arena
     end
 
     def contents
-      # If not present; should make an API request for contents
+      # TODO: If not present; should make an API request for contents
       @contents ||= @attrs.dup['contents'].collect { |block| Arena::Block.new(block) }
     end
   end
