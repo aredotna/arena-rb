@@ -31,7 +31,14 @@ module Arena
 
     def request(method, path, options)
       JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body
-    rescue
+
+    rescue JSON::ParserError
+      nil
+
+    rescue Exception => exception
+      puts exception.inspect
+      puts exception.backtrace
+
       raise Arena::Error
     end
 
