@@ -16,6 +16,16 @@ module Arena
       object_from_response(Arena::Channel, :get, "/channels/#{id}", options)
     end
 
+    # Posts a block to a channel
+    def channel_add_block(id, options={})
+      object_from_response(Arena::Block, :post, "/channels/#{id}/blocks", options)
+    end
+
+    # Remove a block from channel (destroy connection)
+    def channel_remove_block(channel_id, id, options={})
+      send(:delete, "/channels/#{channel_id}/blocks/#{id}", options)
+    end
+
     # Returns thumbnail representation (first 9 Blocks) for the given Channel
     def channel_thumb(id, options={})
       object_from_response(Arena::Channel, :get, "/channels/#{id}/thumb", options)
