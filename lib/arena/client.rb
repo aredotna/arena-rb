@@ -35,6 +35,9 @@ module Arena
     rescue JSON::ParserError
       nil
 
+    rescue TypeError
+      nil
+
     rescue Exception => exception
       puts exception.inspect
       puts exception.backtrace
