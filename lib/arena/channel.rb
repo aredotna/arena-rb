@@ -27,5 +27,7 @@ module Arena
       # TODO: If not present; should make an API request for contents
       @contents ||= @attrs.dup['contents'].collect { |block| Arena::Block.new(block) }
     end
+    alias blocks contents
+    
   end
 end

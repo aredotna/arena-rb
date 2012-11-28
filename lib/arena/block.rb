@@ -9,7 +9,8 @@ module Arena
     include Arena::Creatable
 
     attr_reader :id, :title, :generated_title, :state, :comment_count,
-    :content, :content_html, :description, :description_html, :position
+      :content, :content_html, :description, :description_html, :position,
+      :connection_id, :connected_at, :connected_by_user_id, :connected_by_username
 
     def user
       @user ||= Arena::User.new(@attrs.dup['user'])
@@ -32,11 +33,12 @@ module Arena
     end
 
     def connections
-      # todo
+      @connections ||= @attrs.dup['connections'].collect { |channel| Arena::Channel.new(channel) }
     end
 
   end
 
+  # todo:
   class Text < Block; end
   class Image < Block; end
   class Link < Block; end

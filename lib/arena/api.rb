@@ -26,6 +26,10 @@ module Arena
       send(:delete, "/channels/#{channel_id}/blocks/#{id}", options)
     end
 
+    # def channel_toggle_block_selection(id, options={})
+    #   send(:put, "/connections/#{id}/selection", options)
+    # end
+
     # Returns thumbnail representation (first 9 Blocks) for the given Channel
     def channel_thumb(id, options={})
       object_from_response(Arena::Channel, :get, "/channels/#{id}/thumb", options)
