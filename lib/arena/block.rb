@@ -43,10 +43,9 @@ module Arena
 
   end
 
-  # To do:
   class Text < Block; end
   class Image < Block; end
   class Link < Block; end
-  class Embed < Block; end
+  class Media < Block; end
   class Attachment < Block; end
 end

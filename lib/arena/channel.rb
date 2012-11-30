@@ -24,7 +24,9 @@ module Arena
     end
 
     def contents
-      @contents ||= @attrs['contents'].collect { |block| Arena::Block.new(block) }
+      @contents ||= @attrs['contents'].collect do |object|
+        "Arena::#{object['class']}".constantize.new(object)
+      end
     end
 
     def collaborators
