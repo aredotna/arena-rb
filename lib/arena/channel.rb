@@ -8,8 +8,8 @@ module Arena
     include Arena::Creatable
 
     attr_reader :id, :title, :published, :open, :collaboration,
-      :slug, :length, :kind, :status, :user_id, :user, :total_pages,
-      :current_page, :per, :follower_count, :collaborators
+      :slug, :length, :kind, :status, :user_id, :total_pages,
+      :current_page, :per, :follower_count
 
     def user
       @user ||= Arena::User.new(@attrs.dup['user'])
@@ -24,10 +24,12 @@ module Arena
     end
 
     def contents
-      # TODO: If not present; should make an API request for contents
-      @contents ||= @attrs.dup['contents'].collect { |block| Arena::Block.new(block) }
+      @contents ||= @attrs['contents'].collect { |block| Arena::Block.new(block) }
     end
-    alias blocks contents
+
+    def collaborators
+      @collaborators ||= @attrs['collaborators'].collect { |user| Arena::User.new(user) }
+    end
     
   end
 end
