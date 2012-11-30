@@ -33,7 +33,7 @@ module Arena
     end
 
     def connections
-      @connections ||= @attrs.dup['connections'].collect { |channel| Arena::Channel.new(channel) }
+      @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
     end
 
   end
