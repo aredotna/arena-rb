@@ -32,10 +32,7 @@ module Arena
     def request(method, path, options)
       JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body
 
-    rescue JSON::ParserError
-      nil
-
-    rescue TypeError
+    rescue JSON::ParserError, TypeError
       nil
 
     rescue Exception => exception
