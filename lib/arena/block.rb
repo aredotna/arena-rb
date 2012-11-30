@@ -2,6 +2,7 @@ require 'arena/base'
 require 'arena/entity'
 require 'arena/entities/source'
 require 'arena/entities/image'
+require 'arena/entities/attachment'
 require 'arena/creatable'
 
 module Arena
@@ -31,6 +32,10 @@ module Arena
     def image
       @image ||= Arena::Entity::Image.new(@attrs.dup['image'])
     end
+    
+    def attachment
+      @attachment ||= Arena::Entity::Attachment.new(@attrs.dup['attachment'])
+    end
 
     def connections
       @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
@@ -38,7 +43,7 @@ module Arena
 
   end
 
-  # todo:
+  # To do:
   class Text < Block; end
   class Image < Block; end
   class Link < Block; end
