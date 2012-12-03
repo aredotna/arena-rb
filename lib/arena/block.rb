@@ -9,8 +9,8 @@ module Arena
   class Block < Arena::Base
     include Arena::Creatable
 
-    attr_reader :id, :title, :generated_title, :state, :comment_count,
-      :content, :content_html, :description, :description_html, :position,
+    attr_reader :id, :title, :generated_title, :state, :comment_count, :content,
+      :content_html, :description, :description_html, :position, :selected,
       :connection_id, :connected_at, :connected_by_user_id, :connected_by_username
 
     def user
