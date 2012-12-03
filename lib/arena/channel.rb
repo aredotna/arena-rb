@@ -12,21 +12,19 @@ module Arena
       :current_page, :per, :follower_count
 
     def user
-      @user ||= Arena::User.new(@attrs.dup['user'])
+      @user ||= Arena::User.new(@attrs['user'])
     end
 
     def _class
-      @attrs.dup['class']
+      @attrs['class']
     end
 
     def _base_class
-      @attrs.dup['base_class']
+      @attrs['base_class']
     end
 
     def contents
-      @contents ||= @attrs['contents'].collect do |object|
-        "Arena::#{object['class']}".constantize.new(object)
-      end
+      @contents ||= @attrs['contents'].collect { |object| "Arena::#{object['class']}".constantize.new(object) }
     end
 
     def collaborators
