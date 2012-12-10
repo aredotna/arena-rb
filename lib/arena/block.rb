@@ -14,31 +14,38 @@ module Arena
       :connection_id, :connected_at, :connected_by_user_id, :connected_by_username
 
     def user
-      @user ||= Arena::User.new(@attrs.dup['user'])
+      @user ||= Arena::User.new(@attrs['user'])
     end
 
     def _class
-      @_class ||= @attrs.dup['class']
+      @_class ||= @attrs['class']
     end
 
     def _base_class
-      @_base_class ||= @attrs.dup['base_class']
+      @_base_class ||= @attrs['base_class']
     end
 
     def source
-      @source ||= Arena::Entity::Source.new(@attrs.dup['source'])
+      @source ||= Arena::Entity::Source.new(@attrs['source'])
     end
 
     def image
-      @image ||= Arena::Entity::Image.new(@attrs.dup['image'])
+      @image ||= Arena::Entity::Image.new(@attrs['image']) if has_image?
     end
     
     def attachment
-      @attachment ||= Arena::Entity::Attachment.new(@attrs.dup['attachment'])
+      @attachment ||= Arena::Entity::Attachment.new(@attrs['attachment']) if has_attachment?
     end
 
     def connections
       @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
+    end
+
+    # Detect optional portions of the response
+    [:image, :attachment].each do |kind|
+      define_method "has_#{kind}?" do
+        !@attrs[kind.to_s].nil?
+      end
     end
 
   end
