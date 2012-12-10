@@ -13,7 +13,7 @@ module Arena
     %w(user channel block).each do |method|
       define_method "#{method}s" do
         instance_variable_set("@#{method}s",
-            @attrs.dup["#{method}s"].collect { |element| "Arena::#{method.capitalize}".constantize.new(element) }
+            @attrs["#{method}s"].collect { |element| "Arena::#{method.capitalize}".constantize.new(element) }
           ) unless instance_variable_get "@#{method}s"
         instance_variable_get "@#{method}s"
       end

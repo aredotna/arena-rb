@@ -11,7 +11,7 @@ module Arena
 
       %w(thumb display original).each do |method|
         define_method method do
-          instance_variable_set("@#{method}", Arena::Entity::Version.new(@attrs.dup[method])) unless instance_variable_get "@#{method}"
+          instance_variable_set("@#{method}", Arena::Entity::Version.new(@attrs[method])) unless instance_variable_get "@#{method}"
           instance_variable_get "@#{method}"
         end
       end

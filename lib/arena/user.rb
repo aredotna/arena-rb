@@ -10,7 +10,7 @@ module Arena
     :profile_id, :follower_count, :initials
 
     def _class
-      @attrs.dup['class']
+      @attrs['class']
     end
   end
 end

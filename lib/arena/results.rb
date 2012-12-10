@@ -8,7 +8,7 @@ module Arena
 
   class ChannelResults < Results
     def channels
-      @channels ||= @attrs.dup['channels'].collect { |channel| Arena::Channel.new(channel) }
+      @channels ||= @attrs['channels'].collect { |channel| Arena::Channel.new(channel) }
     end
   end
 end

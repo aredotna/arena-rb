@@ -7,7 +7,7 @@ module Arena
       attr_reader :url
 
       def provider
-        @provider ||= Arena::Entity::Provider.new(@attrs.dup['provider'])
+        @provider ||= Arena::Entity::Provider.new(@attrs['provider'])
       end
     end
   end
