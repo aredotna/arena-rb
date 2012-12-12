@@ -3,6 +3,7 @@ require 'arena/entity'
 require 'arena/entities/source'
 require 'arena/entities/image'
 require 'arena/entities/attachment'
+require 'arena/entities/embed'
 require 'arena/creatable'
 
 module Arena
@@ -37,12 +38,16 @@ module Arena
       @attachment ||= Arena::Entity::Attachment.new(@attrs['attachment']) if has_attachment?
     end
 
+    def embed
+      @embed ||= Arena::Entity::Embed.new(@attrs['embed']) if has_embed?
+    end
+
     def connections
       @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
     end
 
     # Detect optional portions of the response
-    [:image, :attachment].each do |kind|
+    [:image, :attachment, :embed].each do |kind|
       define_method "has_#{kind}?" do
         !@attrs[kind.to_s].nil?
       end
