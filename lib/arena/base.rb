@@ -1,9 +1,11 @@
 module Arena
   class Base
     attr_reader :attrs
+
     alias to_hash attrs
 
-    # Define methods that retrieve the value from an initialized instance variable Hash, using the attribute as a key
+    # Define methods that retrieve the value from an initialized instance
+    # variable Hash, using the attribute as a key
     #
     # @param attrs [Array, Set, Symbol]
     def self.attr_reader(*attrs)
