@@ -28,6 +28,10 @@ module Arena
       def access_token
         ENV['APPLICATION_SECRET']
       end
+
+      def auth_token
+        ENV['AUTH_TOKEN']
+      end
     end
   end
 end

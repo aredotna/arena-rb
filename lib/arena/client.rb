@@ -20,14 +20,23 @@ module Arena
     # Performs HTTP GET POST PUT and DELETE requests
     %w(get post put delete).each do |method|
       define_method method do |path, options={}|
-        options = { query: options,
-                    headers: { 'Authorization' => "Bearer #{@access_token}" } }
+        options = { query: options, headers: set_headers }
                     
         request(__method__, path, options)
       end
     end
 
   private
+
+    def set_headers
+      if !@access_token.nil?
+        { 'Authorization' => "Bearer #{@access_token}" }
+      elsif !@auth_token.nil?
+        { 'X-AUTH-TOKEN' => @auth_token }
+      else
+        { }
+      end
+    end
 
     def request(method, path, options)
       JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body

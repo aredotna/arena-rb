@@ -1,7 +1,12 @@
 module Arena
   module Configurable
-    attr_writer :application_id, :application_secret, :access_token
-    attr_accessor :base_domain, :api_version
+    attr_accessor :base_domain,
+                  :api_version
+
+    attr_writer :application_id,
+                :application_secret,
+                :access_token,
+                :auth_token
 
     class << self
       def keys
@@ -10,7 +15,8 @@ module Arena
           :api_version,
           :application_id,
           :application_secret,
-          :access_token
+          :access_token,
+          :auth_token
         ]
       end
     end
