@@ -16,4 +16,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+Register an application at http://dev.are.na
+
+### Configure for personal use
+```ruby
+Arena.configure do |config|
+    config.access_token = 'XXXXXXXXXXXXX'
+end
+```
