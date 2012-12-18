@@ -51,9 +51,14 @@ module Arena
       object_from_response(Arena::User, :get, "/users/#{id}", options)
     end
 
-    # Returns a paginated list of all Channels a User has access to
+    # Returns a paginated list of all public Channels a User has access to
     def user_channels(id, options={})
       object_from_response(Arena::ChannelResults, :get, "/users/#{id}/channels", options)
+    end
+
+    # All of the authenticated user's Channels
+    def account_channels(options={})
+      object_from_response(Arena::ChannelResults, :get, "/accounts/channels", options)
     end
 
     # Returns a Search object with an Array for Channels, Blocks and Users
