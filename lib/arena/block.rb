@@ -5,14 +5,15 @@ require 'arena/entities/image'
 require 'arena/entities/attachment'
 require 'arena/entities/embed'
 require 'arena/creatable'
+require 'arena/connectable'
 
 module Arena
   class Block < Arena::Base
     include Arena::Creatable
+    include Arena::Connectable
 
     attr_reader :id, :title, :generated_title, :state, :comment_count, :content,
-      :content_html, :description, :description_html, :position, :selected,
-      :connection_id, :connected_by_user_id, :connected_by_username
+      :content_html, :description, :description_html, :position, :selected
 
     def user
       @user ||= Arena::User.new(@attrs['user'])
@@ -44,10 +45,6 @@ module Arena
 
     def connections
       @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
-    end
-
-    def connected_at
-      @connected_at ||= Time.parse(@attrs['connected_at']) if !@attrs['connected_at'].nil?
     end
 
     # Detect optional portions of the response

@@ -1,11 +1,13 @@
 require 'arena/base'
 require 'arena/creatable'
+require 'arena/connectable'
 require 'arena/user'
 require 'arena/block'
 
 module Arena
   class Channel < Arena::Base
     include Arena::Creatable
+    include Arena::Connectable
 
     attr_reader :id, :title, :published, :open, :collaboration,
       :slug, :length, :kind, :status, :user_id, :total_pages,
