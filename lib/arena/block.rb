@@ -12,7 +12,7 @@ module Arena
 
     attr_reader :id, :title, :generated_title, :state, :comment_count, :content,
       :content_html, :description, :description_html, :position, :selected,
-      :connection_id, :connected_at, :connected_by_user_id, :connected_by_username
+      :connection_id, :connected_by_user_id, :connected_by_username
 
     def user
       @user ||= Arena::User.new(@attrs['user'])
@@ -44,6 +44,10 @@ module Arena
 
     def connections
       @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
+    end
+
+    def connected_at
+      @connected_at ||= Time.parse(@attrs['connected_at']) if !@attrs['connected_at'].nil?
     end
 
     # Detect optional portions of the response
