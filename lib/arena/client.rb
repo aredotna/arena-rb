@@ -38,17 +38,23 @@ module Arena
       end
     end
 
+    def error?(response)
+      !response['status']['code'].nil?
+    end
+
+    def error_message(response)
+      "#{response['status']['code']}: #{response['status']['message']} - #{response['status']['description']}"
+    end
+
     def request(method, path, options)
-      JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body
+      response = JSON.parse self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options).body
+      
+      raise Arena::Error.new(error_message(response)) if error?(response)
+      
+      return response
 
     rescue JSON::ParserError, TypeError
       nil
-
-    rescue Exception => exception
-      puts exception.inspect
-      puts exception.backtrace
-
-      raise Arena::Error
     end
 
   end
