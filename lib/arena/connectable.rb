@@ -2,7 +2,13 @@ require 'time'
 
 module Arena
   module Connectable
-    attr_reader :position, :selected, :connection_id
+
+    %w(position selected connection_id).each do |method|
+      define_method method do
+        instance_variable_set("@#{method}", @attrs[method]) unless instance_variable_get "@#{method}"
+        instance_variable_get "@#{method}"
+      end
+    end
 
     def connected_at
       @connected_at ||= Time.parse(@attrs['connected_at']) if connected?
