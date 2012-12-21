@@ -13,7 +13,7 @@ module Arena
     include Arena::Connectable
 
     attr_reader :id, :title, :generated_title, :state, :comment_count, :content,
-      :content_html, :description, :description_html, :position, :selected
+      :content_html, :description, :description_html
 
     def user
       @user ||= Arena::User.new(@attrs['user'])
