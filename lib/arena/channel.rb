@@ -32,6 +32,12 @@ module Arena
     def collaborators
       @collaborators ||= @attrs['collaborators'].collect { |user| Arena::User.new(user) }
     end
+
+    %w(image text link media attachment channel).each do |kind|
+      define_method "#{kind}s" do
+        contents.select { |connectable| connectable._class.downcase == kind }
+      end
+    end
     
   end
 end
