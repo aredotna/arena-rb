@@ -10,6 +10,12 @@ module Arena
       end
     end
 
+    %w(image text link media attachment channel).each do |kind|
+      define_method "is_#{kind}?" do
+        _class == kind.to_s.capitalize
+      end
+    end
+
     def connected_at
       @connected_at ||= Time.parse(@attrs['connected_at']) if connected?
     end
