@@ -29,6 +29,10 @@ module Arena
       @contents ||= @attrs['contents'].collect { |object| "Arena::#{object['class']}".constantize.new(object) }
     end
 
+    def contents_updated_at
+      # todo
+    end
+
     def collaborators
       @collaborators ||= @attrs['collaborators'].collect { |user| Arena::User.new(user) }
     end
