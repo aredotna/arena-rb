@@ -61,6 +61,11 @@ module Arena
       object_from_response(Arena::ChannelResults, :get, "/accounts/channels", options)
     end
 
+    # Returns the authenticated user's settings
+    def settings(options={})
+      object_from_response(Arena::User, :get, "/accounts/settings", options)
+    end
+
     # Returns a Search object with an Array for Channels, Blocks and Users
     def search(query, option={})
       object_from_response(Arena::SearchResults, :get, "/search?q=#{query}", options)
