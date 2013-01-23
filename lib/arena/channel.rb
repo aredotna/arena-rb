@@ -42,6 +42,10 @@ module Arena
         contents.select { |connectable| connectable._class.downcase == kind }
       end
     end
+
+    def blocks
+      contents.select { |connectable| connectable._base_class == "Block" }
+    end
     
   end
 end
