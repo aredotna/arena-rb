@@ -16,6 +16,10 @@ module Arena
       end
     end
 
+    def is_block?
+      _base_class == "Block"
+    end
+
     def connected_at
       @connected_at ||= Time.parse(@attrs['connected_at']) if connected?
     end
