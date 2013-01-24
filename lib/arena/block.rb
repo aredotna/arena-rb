@@ -47,13 +47,6 @@ module Arena
       @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
     end
 
-    # Detect optional portions of the response
-    [:image, :attachment, :embed].each do |kind|
-      define_method "has_#{kind}?" do
-        !@attrs[kind.to_s].nil?
-      end
-    end
-
   end
 
   class Text < Block; end

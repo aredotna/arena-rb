@@ -16,6 +16,13 @@ module Arena
       end
     end
 
+    # Detect optional portions of the response
+    %w(image attachment embed]).each do |kind|
+      define_method "has_#{kind}?" do
+        !@attrs[kind.to_s].nil?
+      end
+    end
+
     def is_block?
       _base_class == "Block"
     end
