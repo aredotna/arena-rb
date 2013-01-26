@@ -43,10 +43,6 @@ module Arena
       @embed ||= Arena::Entity::Embed.new(@attrs['embed']) if has_embed?
     end
 
-    def connections
-      @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
-    end
-
   end
 
   class Text < Block; end

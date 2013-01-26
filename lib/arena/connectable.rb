@@ -27,6 +27,10 @@ module Arena
       _base_class == "Block"
     end
 
+    def connections
+      @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
+    end
+
     def connected_at
       @connected_at ||= Time.parse(@attrs['connected_at']) if connected?
     end
