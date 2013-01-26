@@ -28,7 +28,7 @@ module Arena
     end
 
     def connections
-      @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) }
+      @connections ||= @attrs['connections'].try(:collect) { |channel| Arena::Channel.new(channel) }
     end
 
     def connected_at
