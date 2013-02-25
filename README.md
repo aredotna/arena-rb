@@ -18,7 +18,7 @@ Or install it yourself as:
 
 Register an application at http://dev.are.na
 
-### Configure for personal use
+### Configure for personal use (optional; be aware this grants access to everything your account has access to)
 ```ruby
 Arena.configure do |config|
     config.access_token = 'XXXXXXXXXXXXX'
