@@ -33,6 +33,10 @@ module Arena
       # todo
     end
 
+    def connection_count
+      @connection_count ||= contents.collect(&:connections).flatten.size
+    end
+
     def collaborators
       @collaborators ||= @attrs['collaborators'].collect { |user| Arena::User.new(user) }
     end
