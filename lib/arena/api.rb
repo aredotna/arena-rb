@@ -3,6 +3,7 @@ require 'arena/block'
 require 'arena/channel'
 require 'arena/results'
 require 'arena/search_results'
+require 'arena/account'
 
 module Arena
   module API
@@ -56,6 +57,11 @@ module Arena
       object_from_response(Arena::ChannelResults, :get, "/users/#{id}/channels", options)
     end
 
+    # Full representation of the account endpoint
+    def account(options={})
+      object_from_response(Arena::Account, :get, "/accounts", options)
+    end
+
     # All of the authenticated user's Channels
     def account_channels(options={})
       object_from_response(Arena::ChannelResults, :get, "/accounts/channels", options)
@@ -85,6 +91,5 @@ module Arena
     def collection_from_response(klass, request_method, url, options={}, selector)
       collection_from_array(klass, send(request_method.to_sym, url, options)[selector])
     end
-
   end
 end
