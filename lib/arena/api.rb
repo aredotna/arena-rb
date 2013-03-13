@@ -4,6 +4,7 @@ require 'arena/channel'
 require 'arena/results'
 require 'arena/search_results'
 require 'arena/account'
+require 'arena/comment'
 
 module Arena
   module API
@@ -47,6 +48,11 @@ module Arena
       object_from_response(Arena::Block, :get, "/blocks/#{id}", options)
     end
 
+    # Returns Block comments
+    def block_comments(id, options={})
+      collection_from_response(Arena::Comment, :get, "/blocks/#{id}/comments", "comments", options)
+    end
+
     # Returns a User representation
     def user(id, options={})
       object_from_response(Arena::User, :get, "/users/#{id}", options)
@@ -88,7 +94,7 @@ module Arena
       array.collect { |element| klass.new(element) }
     end
 
-    def collection_from_response(klass, request_method, url, options={}, selector)
+    def collection_from_response(klass, request_method, url, selector, options={})
       collection_from_array(klass, send(request_method.to_sym, url, options)[selector])
     end
   end
