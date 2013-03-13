@@ -1,11 +1,11 @@
 require 'arena/base'
+require 'arena/creatable'
+require 'arena/connectable'
 require 'arena/entity'
 require 'arena/entities/source'
 require 'arena/entities/image'
 require 'arena/entities/attachment'
 require 'arena/entities/embed'
-require 'arena/creatable'
-require 'arena/connectable'
 
 module Arena
   class Block < Arena::Base
@@ -28,7 +28,7 @@ module Arena
     end
 
     def source
-      @source ||= Arena::Entity::Source.new(@attrs['source'])
+      @source ||= Arena::Entity::Source.new(@attrs['source']) if !@attrs['source'].nil?
     end
 
     def image
@@ -42,7 +42,6 @@ module Arena
     def embed
       @embed ||= Arena::Entity::Embed.new(@attrs['embed']) if has_embed?
     end
-
   end
 
   class Text < Block; end
