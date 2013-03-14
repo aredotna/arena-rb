@@ -43,11 +43,7 @@ module Arena
       end
 
       def padrino_app_name
-        if defined?(Padrino)
-          Padrino.mounted_apps.first.name
-        else
-          nil
-        end
+        nil
       end
     end
   end

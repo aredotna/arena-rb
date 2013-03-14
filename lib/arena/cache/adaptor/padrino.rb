@@ -5,7 +5,7 @@ module Arena
     module Adaptor
       class Padrino < Arena::Cache::Adaptor::Generic
         def self.method_missing(method, *args, &block)
-          app = Arena.padrino_app_name.constantize
+          app = Arena.padrino_app_name.constantize || Padrino.mounted_apps.first.name.constantize
           key = args.present? ? "arena_#{method}_#{args.first}" : "arena_#{method}"
           cache = padrino.cache.get(key)
 
