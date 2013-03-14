@@ -5,9 +5,10 @@ module Arena
     module Adaptor
       class Padrino < Arena::Cache::Adaptor::Generic
         def self.method_missing(method, *args, &block)
+          app = Arena.padrino_app_name
           padrino =
-            if !Arena.padrino_app_name.nil?
-              Arena.padrino_app_name.constantize
+            if !app.nil?
+              app.constantize
             else
               Padrino.mounted_apps.first.name.constantize
             end
