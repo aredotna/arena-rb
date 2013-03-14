@@ -2,9 +2,10 @@ module Arena
   module Default
     BASE_DOMAIN = "api.are.na" unless defined? BASE_DOMAIN
     API_VERSION = "v2" unless defined? API_VERSION
+    USE_CACHING = false unless defined? USE_CACHING
+    EXPIRES_IN  = 600 unless defined? EXPIRES_IN # 10 minutes
 
     class << self
-      # @return [Hash]
       def options
         Hash[Arena::Configurable.keys.map{|key| [key, send(key)]}]
       end
@@ -18,19 +19,27 @@ module Arena
       end
 
       def application_id
-        ENV['APPLICATION_ID']
+        ENV["APPLICATION_ID"]
       end
 
       def application_secret
-        ENV['APPLICATION_SECRET']
+        ENV["APPLICATION_SECRET"]
       end
 
       def access_token
-        ENV['APPLICATION_SECRET']
+        ENV["APPLICATION_SECRET"]
       end
 
       def auth_token
-        ENV['AUTH_TOKEN']
+        ENV["AUTH_TOKEN"]
+      end
+
+      def use_caching
+        USE_CACHING
+      end
+
+      def expires_in
+        EXPIRES_IN
       end
     end
   end

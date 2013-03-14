@@ -1,7 +1,9 @@
 module Arena
   module Configurable
     attr_accessor :base_domain,
-                  :api_version
+                  :api_version,
+                  :use_caching,
+                  :expires_in
 
     attr_writer :application_id,
                 :application_secret,
@@ -16,15 +18,18 @@ module Arena
           :application_id,
           :application_secret,
           :access_token,
-          :auth_token
+          :auth_token,
+          :use_caching,
+          :expires_in
         ]
       end
     end
 
-    # Allows configuration options
-    # to be set in a block
+    # Allows configuration options to be set in a block
+    # 
     def configure
       yield self
+
       self
     end
 
@@ -32,6 +37,7 @@ module Arena
       Arena::Configurable.keys.each do |key|
         instance_variable_set(:"@#{key}", Arena::Default.options[key])
       end
+      
       self
     end
 
@@ -39,10 +45,8 @@ module Arena
 
   private
 
-    # @return [Hash]
     def options
       Hash[Arena::Configurable.keys.map{|key| [key, instance_variable_get(:"@#{key}")]}]
     end
-
   end
 end
