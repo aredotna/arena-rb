@@ -1,11 +1,10 @@
-require 'arena/configurable'
-require 'arena/error'
-require 'arena/api'
-require 'httparty'
-require 'json'
+require "arena/configurable"
+require "arena/error"
+require "arena/api"
+require "httparty"
+require "json"
 
 module Arena
-
   class Client
     include HTTParty
     include Arena::Configurable
@@ -18,6 +17,7 @@ module Arena
     end
 
     # Performs HTTP GET POST PUT and DELETE requests
+    # 
     %w(get post put delete).each do |method|
       define_method method do |path, options={}|
         options = { query: options, headers: set_headers }
@@ -30,9 +30,9 @@ module Arena
 
     def set_headers
       if !@access_token.nil?
-        { 'Authorization' => "Bearer #{@access_token}" }
+        { "Authorization" => "Bearer #{@access_token}" }
       elsif !@auth_token.nil?
-        { 'X-AUTH-TOKEN' => @auth_token }
+        { "X-AUTH-TOKEN" => @auth_token }
       else
         { }
       end
@@ -52,12 +52,9 @@ module Arena
 
       raise Arena::Error.new(error_message(parsed)) if error?(response)
       
-      return parsed
-
+      parsed
     rescue JSON::ParserError, TypeError
       nil
     end
-
   end
-
 end
