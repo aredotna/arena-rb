@@ -41,6 +41,14 @@ module Arena
       def expires_in
         EXPIRES_IN
       end
+
+      def padrino_app_name
+        if defined?(Padrino)
+          Padrino.mounted_apps.first.name
+        else
+          nil
+        end
+      end
     end
   end
 end
