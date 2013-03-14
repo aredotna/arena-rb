@@ -3,7 +3,8 @@ module Arena
     attr_accessor :base_domain,
                   :api_version,
                   :use_caching,
-                  :expires_in
+                  :expires_in,
+                  :padrino_app_name
 
     attr_writer :application_id,
                 :application_secret,
@@ -20,7 +21,8 @@ module Arena
           :access_token,
           :auth_token,
           :use_caching,
-          :expires_in
+          :expires_in,
+          :padrino_app_name
         ]
       end
     end
