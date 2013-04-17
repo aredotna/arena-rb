@@ -41,6 +41,14 @@ module Arena
       @collaborators ||= @attrs['collaborators'].collect { |user| Arena::User.new(user) }
     end
 
+    def contributors
+      @contributors ||= contents.collect(&:user).uniq_by(&:id)
+    end
+
+    def channels
+      @channels ||= contents.collect(&:connections).flatten.compact.uniq_by(&:id)
+    end
+
     %w(image text link media attachment channel).each do |kind|
       define_method "#{kind}s" do
         contents.select { |connectable| connectable._class.downcase == kind }
@@ -50,6 +58,5 @@ module Arena
     def blocks
       contents.select { |connectable| connectable._base_class == "Block" }
     end
-    
-  end
-end
+  end # Channel < Arena::Base
+end # Arena
