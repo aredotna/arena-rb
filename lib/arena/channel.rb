@@ -42,11 +42,11 @@ module Arena
     end
 
     def contributors
-      @contributors ||= contents.collect(&:user).uniq_by(&:id)
+      @contributors ||= contents.collect(&:user).uniq(&:id)
     end
 
-    def channels
-      @channels ||= contents.collect(&:connections).flatten.compact.uniq_by(&:id)
+    def flat_connections
+      @flat_connections ||= contents.collect(&:connections).flatten.compact.uniq(&:id)
     end
 
     %w(image text link media attachment channel).each do |kind|
