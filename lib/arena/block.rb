@@ -15,10 +15,6 @@ module Arena
     attr_reader :id, :title, :generated_title, :state, :comment_count, :content,
       :content_html, :description, :description_html
 
-    def user
-      @user ||= Arena::User.new(@attrs['user'])
-    end
-
     def _class
       @_class ||= @attrs['class']
     end

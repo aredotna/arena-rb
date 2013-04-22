@@ -13,10 +13,6 @@ module Arena
       :slug, :length, :kind, :status, :user_id, :total_pages,
       :current_page, :per, :follower_count
 
-    def user
-      @user ||= Arena::User.new(@attrs['user'])
-    end
-
     def _class
       @attrs['class']
     end

@@ -2,6 +2,9 @@ require 'time'
 
 module Arena
   module Connectable
+    def user
+      @user ||= Arena::User.new(@attrs['user']) if !@attrs['user'].nil?
+    end
 
     %w(position selected connection_id).each do |method|
       define_method method do
