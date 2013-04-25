@@ -79,8 +79,14 @@ module Arena
     end
 
     # Returns a Search object with an Array for Channels, Blocks and Users
-    def search(query, option={})
-      object_from_response(Arena::SearchResults, :get, "/search?q=#{query}", options)
+    def search(query, kind=nil, option={})
+      path =
+        if kind.nil?
+          "/search/?q=#{query}"
+        else
+          "/search/#{kind}/?q=#{query}"
+        end
+      object_from_response(Arena::SearchResults, :get, path, options)
     end
 
   private
