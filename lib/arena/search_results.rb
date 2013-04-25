@@ -1,14 +1,17 @@
-require 'arena/core_ext/string'
-require 'arena/base'
-require 'arena/channel'
-require 'arena/user'
-require 'arena/block'
+require "arena/core_ext/string"
+require "arena/base"
+require "arena/channel"
+require "arena/user"
+require "arena/block"
 
 module Arena
   class SearchResults < Arena::Base
-    def term
-      @attrs['term'] unless @attrs['term'].nil?
-    end
+    attr_reader :term,
+                :per,
+                :current_page,
+                :total_pages,
+                :length,
+                :authenticated
 
     %w(user channel block).each do |method|
       define_method "#{method}s" do
@@ -18,5 +21,5 @@ module Arena
         instance_variable_get "@#{method}s"
       end
     end
-  end
-end
+  end # SearchResults
+end # Arena
