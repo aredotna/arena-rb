@@ -13,7 +13,7 @@ module Arena
     end
 
     def user
-      @user ||= Arena::User.new(@attrs['user'])
+      @user ||= Arena::User.new(@attrs["user"])
     end
   end
 end
