@@ -1,14 +1,8 @@
 require "arena/version"
 
-def reload!
-  load "arena/client.rb"
-  load "arena/default.rb"
-  load "arena/configurable.rb"
-end
-
-alias load! reload!
-
-load!
+load "arena/client.rb"
+load "arena/default.rb"
+load "arena/configurable.rb"
 
 module Arena
   class << self
