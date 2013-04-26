@@ -4,7 +4,7 @@ module Arena
 
     def initialize(stories)
       @indicative = stories.first
-      @kinds      = stories.collect { |story| story.item._class }
+      @kinds      = stories.collect { |story| story.item._class }.uniq
       @size       = stories.size
     end
   end # Summary
