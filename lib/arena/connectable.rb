@@ -47,7 +47,7 @@ module Arena
           'id' => @attrs['connected_by_user_id'],
           'username' => @attrs['connected_by_username'],
           'full_name' => @attrs['connected_by_username']
-        })
+        }) if connected?
     end
 
   private
@@ -55,6 +55,5 @@ module Arena
     def connected?
       !@attrs['connected_at'].nil?
     end
-
-  end
-end
+  end # Connectable
+end # Arena
