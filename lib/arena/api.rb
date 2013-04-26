@@ -1,10 +1,11 @@
-require 'arena/user'
-require 'arena/block'
-require 'arena/channel'
-require 'arena/results'
-require 'arena/search_results'
-require 'arena/account'
-require 'arena/comment'
+require "arena/user"
+require "arena/block"
+require "arena/channel"
+require "arena/results"
+require "arena/search_results"
+require "arena/account"
+require "arena/comment"
+require "arena/feed"
 
 module Arena
   module API
@@ -65,16 +66,22 @@ module Arena
 
     # Full representation of the account endpoint
     def account(options={})
+      require_authentication!
+
       object_from_response(Arena::Account, :get, "/accounts", options)
     end
 
     # All of the authenticated user's Channels
     def account_channels(options={})
+      require_authentication!
+
       object_from_response(Arena::ChannelResults, :get, "/accounts/channels", options)
     end
 
     # Returns the authenticated user's settings
     def settings(options={})
+      require_authentication!
+
       object_from_response(Arena::User, :get, "/accounts/settings", options)
     end
 
@@ -85,7 +92,18 @@ module Arena
       object_from_response(Arena::SearchResults, :get, path, options)
     end
 
+    # Returns a Feed object with an arry of Stories
+    def feed(options={})
+      require_authentication!
+
+      object_from_response(Arena::Feed, :get, "/feed", options)
+    end
+
   private
+
+    def require_authentication!
+      # todo: Raise error if key missing
+    end
 
     def object_from_response(klass, request_method, url, options={})
       response = send(request_method.to_sym, url, options)
@@ -99,5 +117,5 @@ module Arena
     def collection_from_response(klass, request_method, url, selector, options={})
       collection_from_array(klass, send(request_method.to_sym, url, options)[selector])
     end
-  end
-end
+  end # API
+end # Arena
