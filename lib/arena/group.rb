@@ -7,7 +7,7 @@ module Arena
 
     def initialize(id, stories)
       @id = id
-      @stories = stories.sort_by { |story| story.item.created_at }.reverse!
+      @stories = stories
     end
 
     def created_at

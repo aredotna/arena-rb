@@ -20,7 +20,9 @@ module Arena
           "#{item.user.id}_#{target}#{item.action.gsub(' ', '_')}"
         end
 
-        @groups ||= groups.collect { |key, stories| Arena::Group.new(key, stories) }
+        @groups ||=
+          groups.collect { |key, stories| Arena::Group.new(key, stories) }.
+            sort_by { |group| group.summary.indicative.created_at }.reverse!
       end
     end
 
