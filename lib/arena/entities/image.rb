@@ -9,7 +9,7 @@ module Arena
 
       attr_reader :filename, :content_type
 
-      %w(thumb display original).each do |method|
+      %w(thumb square display large original).each do |method|
         define_method method do
           instance_variable_set("@#{method}", Arena::Entity::Version.new(@attrs[method])) unless instance_variable_get "@#{method}"
           instance_variable_get "@#{method}"
