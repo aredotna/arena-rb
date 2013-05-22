@@ -6,6 +6,7 @@ require "arena/search_results"
 require "arena/account"
 require "arena/comment"
 require "arena/feed"
+require "arena/subscription"
 
 module Arena
   module API
@@ -97,6 +98,13 @@ module Arena
       require_authentication!
 
       object_from_response(Arena::Feed, :get, "/feed", options)
+    end
+
+    # Returns a Subscription object
+    def subscribe(options={})
+      require_authentication!
+
+      object_from_response(Arena::Subscription, :post, "/subscriptions", options)
     end
 
   private
