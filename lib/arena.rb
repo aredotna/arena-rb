@@ -11,7 +11,7 @@ module Arena
     # Delegate to a Arena::Client
     #
     # @return [Arena::Client]
-    # 
+    #
     def client
       if @client
         @client
