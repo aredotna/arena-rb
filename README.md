@@ -16,7 +16,7 @@ Or install it yourself as:
 
 ## Usage
 
-Register an application at http://dev.aredotna.com
+Register an application at [http://dev.are.na](http://dev.are.na).
 
 ### Configure for personal use (optional; be aware this grants access to everything your account has access to)
 ```ruby
