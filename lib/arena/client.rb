@@ -17,11 +17,11 @@ module Arena
     end
 
     # Performs HTTP GET POST PUT and DELETE requests
-    # 
+    #
     %w(get post put delete).each do |method|
       define_method method do |path, options={}|
         options = { query: options, headers: set_headers }
-                    
+
         request(__method__, path, options)
       end
     end
@@ -43,7 +43,7 @@ module Arena
     end
 
     def error_message(response)
-      "#{response['status']['code']}: #{response['status']['message']} - #{response['status']['description']}"
+      "#{response['code']}: #{response['message']} - #{response['description']}"
     end
 
     def request(method, path, options)
@@ -51,7 +51,7 @@ module Arena
       parsed = JSON.parse(response.body)
 
       raise Arena::Error.new(error_message(parsed)) if error?(response)
-      
+
       parsed
     rescue JSON::ParserError, TypeError
       nil
