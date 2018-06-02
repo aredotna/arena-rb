@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Arena::VERSION
 
   gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'minitest'
 
   gem.add_runtime_dependency 'json'
   gem.add_runtime_dependency 'httparty'
