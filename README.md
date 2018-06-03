@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.org/aredotna/arena-rb.svg?branch=master)
+
 # Arena
 
 ## Installation
