@@ -1,0 +1,6 @@
+rvm:
+  - 2.5.0
+
+language: ruby
+
+cache: bundler
