@@ -47,7 +47,7 @@ module Arena
     end
 
     def request(method, path, options)
-      response = self.class.send(method, "http://#{@base_domain}/#{@api_version}#{path}", options)
+      response = self.class.send(method, "https://#{@base_domain}/#{@api_version}#{path}", options)
       parsed = JSON.parse(response.body)
 
       raise Arena::Error.new(error_message(parsed)) if error?(response)
