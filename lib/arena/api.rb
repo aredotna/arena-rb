@@ -7,6 +7,7 @@ require "arena/account"
 require "arena/comment"
 require "arena/feed"
 require "arena/channel_feed"
+require "arena/user_feed"
 
 module Arena
   module API
@@ -48,6 +49,11 @@ module Arena
     # Returns a paginated feed for a given Channel
     def channel_feed(id, options={})
       object_from_response(Arena::ChannelFeed, :get, "/channel/#{id}/feed", options)
+    end
+
+    # Returns a paginated feed for a given User
+    def user_feed(id, options={})
+      object_from_response(Arena::UserFeed, :get, "/user/#{id}/feed", options)
     end
 
     # Returns a full Block representation
