@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["everyone@aredotna.com"]
   gem.description   = "Wrapper for Arena's API"
   gem.summary       = "Wrapper for Arena's API"
-  gem.homepage      = "http://www.aredotna.com/"
+  gem.homepage      = "https://www.are.na/"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -17,6 +17,8 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'minitest'
+  gem.add_development_dependency 'webmock'
+  gem.add_development_dependency 'minitest-vcr'
 
   gem.add_runtime_dependency 'json'
   gem.add_runtime_dependency 'httparty'
