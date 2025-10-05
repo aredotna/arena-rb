@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aredotna/arena-rb.svg?branch=master)](https://travis-ci.org/aredotna/arena-rb)
+[![test](https://github.com/aredotna/arena-rb/actions/workflows/test.yml/badge.svg)](https://github.com/aredotna/arena-rb/actions/workflows/test.yml)
 
 # Arena
 

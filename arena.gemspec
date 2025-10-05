@@ -22,5 +22,4 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'json'
   gem.add_runtime_dependency 'httparty'
-
 end
