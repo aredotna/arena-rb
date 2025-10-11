@@ -48,13 +48,20 @@ module Arena
 
     def request(method, path, options)
       response = self.class.send(method, "https://#{@base_domain}/#{@api_version}#{path}", options)
-      parsed = JSON.parse(response.body)
+      
+      parsed = if response.content_type&.include?('application/json')
+        begin
+          JSON.parse(response.body)
+        rescue JSON::ParserError, TypeError
+          nil   
+        end
+      else
+        response.body
+      end
 
       raise Arena::Error.new(error_message(parsed)) if error?(response)
 
       parsed
-    rescue JSON::ParserError, TypeError
-      nil
     end
   end
 end
