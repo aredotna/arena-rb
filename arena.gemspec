@@ -11,7 +11,9 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.name          = 'arena'
   gem.require_paths = ['lib']
-  gem.version       = Arena::VERSION
+  gem.required_ruby_version = '>= 3.0'
+
+  gem.version = Arena::VERSION
 
   gem.add_dependency 'httparty'
   gem.add_dependency 'json'

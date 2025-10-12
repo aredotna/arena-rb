@@ -18,8 +18,8 @@ module Arena
 
     private
 
-    def method_missing(method, *, &)
-      client.send(method, *, &)
+    def method_missing(method, ...)
+      client.send(method, ...)
     end
   end # self
 end # Arena

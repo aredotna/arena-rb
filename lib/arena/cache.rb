@@ -17,8 +17,8 @@ module Arena
 
       # Delegate to the appropriate cache engine
       #
-      def method_missing(method, *, &)
-        "Arena::Cache::Adaptor::#{adapt_to}".constantize.send(method, *, &)
+      def method_missing(method, ...)
+        "Arena::Cache::Adaptor::#{adapt_to}".constantize.send(method, ...)
       end
     end
   end
