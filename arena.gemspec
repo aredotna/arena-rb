@@ -13,11 +13,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Arena::VERSION
 
-  gem.add_development_dependency 'minitest'
-  gem.add_development_dependency 'minitest-vcr'
-  gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'webmock'
-
   gem.add_dependency 'httparty'
   gem.add_dependency 'json'
   gem.metadata['rubygems_mfa_required'] = 'true'
