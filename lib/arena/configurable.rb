@@ -48,7 +48,7 @@ module Arena
     private
 
     def options
-      Hash[Arena::Configurable.keys.map { |key| [key, instance_variable_get(:"@#{key}")] }]
+      Arena::Configurable.keys.to_h { |key| [key, instance_variable_get(:"@#{key}")] }
     end
   end
 end

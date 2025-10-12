@@ -41,14 +41,6 @@ Style/Documentation:
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: AllowSplatArgument.
-Style/HashConversion:
-  Exclude:
-    - 'lib/arena/configurable.rb'
-    - 'lib/arena/default.rb'
-
-# Offense count: 2
-# This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: AllowedReceivers.
 # AllowedReceivers: Thread.current
 Style/HashEachMethods:

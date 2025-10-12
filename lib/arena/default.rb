@@ -9,7 +9,7 @@ module Arena
 
     class << self
       def options
-        Hash[Arena::Configurable.keys.map { |key| [key, send(key)] }]
+        Arena::Configurable.keys.to_h { |key| [key, send(key)] }
       end
 
       def api_version
