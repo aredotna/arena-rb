@@ -25,15 +25,6 @@ Naming/PredicatePrefix:
     - 'spec/**/*'
     - 'lib/arena/connectable.rb'
 
-# Offense count: 2
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: AllowedMethods, AllowedPatterns.
-# AllowedMethods: ==, equal?, eql?
-Style/ClassEqualityComparison:
-  Exclude:
-    - 'lib/arena/base.rb'
-
-
 # Offense count: 36
 # Configuration parameters: AllowedConstants.
 Style/Documentation:

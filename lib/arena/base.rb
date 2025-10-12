@@ -43,13 +43,13 @@ module Arena
     # @param other [Arena::Base]
     # @return [Boolean]
     def attr_equal(attr, other)
-      self.class == other.class && !other.send(attr).nil? && send(attr) == other.send(attr)
+      instance_of?(other.class) && !other.send(attr).nil? && send(attr) == other.send(attr)
     end
 
     # @param other [Arena::Base]
     # @return [Boolean]
     def attrs_equal(other)
-      self.class == other.class && !other.attrs.empty? && attrs == other.attrs
+      instance_of?(other.class) && !other.attrs.empty? && attrs == other.attrs
     end
   end
 end
