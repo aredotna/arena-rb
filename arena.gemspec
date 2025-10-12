@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'English'
 require File.expand_path('lib/arena/version', __dir__)
 
 Gem::Specification.new do |gem|
@@ -9,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.summary       = "Wrapper for Arena's API"
   gem.homepage      = 'https://www.are.na/'
 
-  gem.files         = `git ls-files`.split($\)
+  gem.files         = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.name          = 'arena'
   gem.require_paths = ['lib']

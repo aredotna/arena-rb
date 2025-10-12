@@ -61,7 +61,7 @@ module Arena
                  response.body
                end
 
-      raise Arena::Error.new(error_message(parsed)) if error?(response)
+      raise Arena::Error, error_message(parsed) if error?(response)
 
       parsed
     end
