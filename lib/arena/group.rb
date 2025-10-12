@@ -1,5 +1,5 @@
-require "arena/story"
-require "arena/summary"
+require 'arena/story'
+require 'arena/summary'
 
 module Arena
   class Group

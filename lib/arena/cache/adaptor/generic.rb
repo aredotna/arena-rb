@@ -1,4 +1,4 @@
-require "arena/configurable"
+require 'arena/configurable'
 
 module Arena
   module Cache

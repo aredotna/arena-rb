@@ -1,5 +1,7 @@
 class String
-  def constantize
-    self.split("::").inject(Module) {|acc, val| acc.const_get(val)}
-  end unless method_defined?(:constantize)
+  unless method_defined?(:constantize)
+    def constantize
+      split('::').inject(Module) { |acc, val| acc.const_get(val) }
+    end
+  end
 end

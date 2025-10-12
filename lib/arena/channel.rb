@@ -10,8 +10,8 @@ module Arena
     include Arena::Connectable
 
     attr_reader :id, :title, :published, :open, :collaboration,
-      :slug, :length, :kind, :status, :user_id, :total_pages,
-      :current_page, :per, :follower_count
+                :slug, :length, :kind, :status, :user_id, :total_pages,
+                :current_page, :per, :follower_count
 
     def _class
       @attrs['class']
@@ -45,14 +45,14 @@ module Arena
       @flat_connections ||= contents.collect(&:connections).flatten.compact.uniq(&:id)
     end
 
-    %w(image text link media attachment channel).each do |kind|
+    %w[image text link media attachment channel].each do |kind|
       define_method "#{kind}s" do
         contents.select { |connectable| connectable._class.downcase == kind }
       end
     end
 
     def blocks
-      contents.select { |connectable| connectable._base_class == "Block" }
+      contents.select { |connectable| connectable._base_class == 'Block' }
     end
   end # Channel < Arena::Base
 end # Arena
