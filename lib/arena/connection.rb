@@ -6,5 +6,5 @@ module Arena
 
     attr_reader :id, :position, :selected, :user_id,
                 :connectable_id, :connectable_type, :channel_id
-  end # Connection
-end # Arena
+  end
+end

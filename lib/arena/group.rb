@@ -17,5 +17,5 @@ module Arena
     def summary
       @summary ||= Arena::Summary.new(stories)
     end
-  end # Group
-end # Arena
+  end
+end

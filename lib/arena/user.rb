@@ -18,5 +18,5 @@ module Arena
     def avatar_image
       Arena::Entity::Avatar.new(@attrs['avatar_image']) unless @attrs['avatar_image'].nil?
     end
-  end # User
-end # Arena
+  end
+end

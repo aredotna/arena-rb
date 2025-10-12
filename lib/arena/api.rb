@@ -129,5 +129,5 @@ module Arena
     def collection_from_response(klass, request_method, url, selector, options = {})
       collection_from_array(klass, send(request_method.to_sym, url, options)[selector])
     end
-  end # API
-end # Arena
+  end
+end

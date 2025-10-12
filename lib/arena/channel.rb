@@ -54,5 +54,5 @@ module Arena
     def blocks
       contents.select { |connectable| connectable._base_class == 'Block' }
     end
-  end # Channel < Arena::Base
-end # Arena
+  end
+end

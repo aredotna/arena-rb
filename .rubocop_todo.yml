@@ -33,25 +33,6 @@ Style/ClassEqualityComparison:
   Exclude:
     - 'lib/arena/base.rb'
 
-# Offense count: 32
-# This cop supports unsafe autocorrection (--autocorrect-all).
-Style/CommentedKeyword:
-  Exclude:
-    - 'lib/arena.rb'
-    - 'lib/arena/api.rb'
-    - 'lib/arena/channel.rb'
-    - 'lib/arena/channel_feed.rb'
-    - 'lib/arena/connectable.rb'
-    - 'lib/arena/connection.rb'
-    - 'lib/arena/entities/avatar.rb'
-    - 'lib/arena/entities/embed.rb'
-    - 'lib/arena/feed.rb'
-    - 'lib/arena/group.rb'
-    - 'lib/arena/search_results.rb'
-    - 'lib/arena/story.rb'
-    - 'lib/arena/summary.rb'
-    - 'lib/arena/user.rb'
-    - 'lib/arena/user_feed.rb'
 
 # Offense count: 36
 # Configuration parameters: AllowedConstants.

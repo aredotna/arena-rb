@@ -24,5 +24,5 @@ module Arena
         instance_variable_get "@#{method}s"
       end
     end
-  end # SearchResults
-end # Arena
+  end
+end

@@ -61,5 +61,5 @@ module Arena
     def connected?
       !@attrs['connected_at'].nil?
     end
-  end # Connectable
-end # Arena
+  end
+end

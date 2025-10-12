@@ -31,5 +31,5 @@ module Arena
     def stories?
       !@attrs['items'].nil?
     end
-  end # Feed
-end # Arena
+  end
+end

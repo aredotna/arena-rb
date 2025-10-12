@@ -8,6 +8,6 @@ module Arena
       def custom(size = 40)
         thumb.gsub('s=40', "s=#{size}")
       end
-    end # Avatar
-  end # Entity
-end # Arena
+    end
+  end
+end

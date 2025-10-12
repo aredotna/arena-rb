@@ -7,5 +7,5 @@ module Arena
       @kinds      = stories.collect { |story| story.item._class }.uniq
       @size       = stories.size
     end
-  end # Summary
-end # Arena
+  end
+end

@@ -21,7 +21,7 @@ module Arena
     def method_missing(method, ...)
       client.send(method, ...)
     end
-  end # self
-end # Arena
+  end
+end
 
 Arena.setup

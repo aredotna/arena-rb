@@ -28,5 +28,5 @@ module Arena
         instance_variable_get "@#{method}"
       end
     end
-  end # Story
-end # Arena
+  end
+end
