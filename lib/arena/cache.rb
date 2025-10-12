@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/cache/adaptor/rails'
 require 'arena/cache/adaptor/padrino'
 require 'arena/cache/adaptor/null'

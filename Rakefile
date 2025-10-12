@@ -1,4 +1,6 @@
 #!/usr/bin/env rake
+# frozen_string_literal: true
+
 require 'bundler/gem_tasks'
 
 desc 'Open an irb session preloaded with this library.'

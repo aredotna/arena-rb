@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/error/cache_error'
 
 module Arena

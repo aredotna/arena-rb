@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/story'
 require 'arena/summary'
 

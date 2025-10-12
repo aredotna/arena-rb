@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/configurable'
 require 'arena/error'
 require 'arena/api'

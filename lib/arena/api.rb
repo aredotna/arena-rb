@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/user'
 require 'arena/block'
 require 'arena/channel'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   class Base
     attr_reader :attrs

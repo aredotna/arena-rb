@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ENV['MT_COMPAT'] = 'true'
 
 require 'minitest/autorun'

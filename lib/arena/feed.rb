@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/base'
 require 'arena/story'
 require 'arena/group'

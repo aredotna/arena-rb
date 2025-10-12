@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   module Default
     BASE_DOMAIN = 'api.are.na' unless defined? BASE_DOMAIN

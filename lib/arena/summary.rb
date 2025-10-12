@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   class Summary
     attr_reader :indicative, :kinds, :size

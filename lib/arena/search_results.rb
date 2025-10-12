@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'arena/core_ext/string'
 require 'arena/base'
 require 'arena/channel'

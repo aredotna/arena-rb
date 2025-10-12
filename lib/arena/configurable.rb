@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   module Configurable
     attr_accessor :base_domain,
