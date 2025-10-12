@@ -1,8 +1,8 @@
 require "arena/version"
 
-load "arena/client.rb"
-load "arena/default.rb"
-load "arena/configurable.rb"
+require "arena/client.rb"
+require "arena/default.rb"
+require "arena/configurable.rb"
 
 module Arena
   class << self
