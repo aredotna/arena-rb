@@ -9,16 +9,24 @@ describe Arena do
     end
 
     it 'handles a 403 error' do
-      assert_raises StandardError do
+      error = assert_raises Arena::Error do
         Arena.channel('delightfully-absurd')
       end
+      assert_equal '403: Forbidden', error.message
     end
 
     it 'handles a 400 error that returns JSON' do
-      error = assert_raises StandardError do
+      error = assert_raises Arena::Error do
         Arena.channel('delightfully-absurd')
       end
       assert_equal '400: Internal Server Error - Something went wrong.', error.message
+    end
+
+    it 'handles a 400 error that returns nil' do
+      error = assert_raises Arena::Error do
+        Arena.channel('delightfully-absurd')
+      end
+      assert_equal '403: Unexpected Error', error.message
     end
   end
 end

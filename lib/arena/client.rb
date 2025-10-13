@@ -44,8 +44,12 @@ module Arena
       response.code != 200
     end
 
-    def error_message(response)
+    def error_message_from_json(response)
       "#{response['code']}: #{response['message']} - #{response['description']}"
+    end
+
+    def error_message(response)
+      "#{response.code}: #{response.body && response.body.length.positive? ? response.body : 'Unexpected Error'}"
     end
 
     def request(method, path, options)
@@ -55,13 +59,10 @@ module Arena
                  begin
                    JSON.parse(response.body)
                  rescue JSON::ParserError, TypeError
-                   nil
                  end
-               else
-                 response.body
                end
 
-      raise Arena::Error, error_message(parsed) if error?(response)
+      raise Arena::Error, parsed ? error_message_from_json(parsed) : error_message(response) if error?(response)
 
       parsed
     end
