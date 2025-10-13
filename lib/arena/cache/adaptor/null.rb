@@ -1,10 +1,12 @@
-require "arena/error/cache_error"
+# frozen_string_literal: true
+
+require 'arena/error/cache_error'
 
 module Arena
   module Cache
     module Adaptor
       class Null
-        def self.method_missing(method, *args, &block)
+        def self.method_missing(_method, *_args)
           raise Arena::Error::CacheError
         end
       end

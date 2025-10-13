@@ -1,4 +1,6 @@
-require "arena/configurable"
+# frozen_string_literal: true
+
+require 'arena/configurable'
 
 module Arena
   module Cache

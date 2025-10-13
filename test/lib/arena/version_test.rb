@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 require_relative '../../test_helper'
 
 describe Arena do
-
-  it "must be defined" do
+  it 'must be defined' do
     _(Arena::VERSION).wont_be_nil
   end
-
 end

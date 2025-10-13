@@ -1,37 +1,43 @@
+# frozen_string_literal: true
+
 require 'time'
 
 module Arena
   module Connectable
     def user
-      @user ||= Arena::User.new(@attrs['user']) if !@attrs['user'].nil?
+      @user ||= Arena::User.new(@attrs['user']) unless @attrs['user'].nil?
     end
 
-    %w(position selected connection_id).each do |method|
+    %w[position selected connection_id].each do |method|
       define_method method do
         instance_variable_set("@#{method}", @attrs[method]) unless instance_variable_get "@#{method}"
         instance_variable_get "@#{method}"
       end
     end
 
-    %w(image text link media attachment channel).each do |kind|
+    %w[image text link media attachment channel].each do |kind|
       define_method "is_#{kind}?" do
         _class == kind.to_s.capitalize
       end
     end
 
     # Detect optional portions of the response
-    %w(image attachment embed).each do |kind|
+    %w[image attachment embed].each do |kind|
       define_method "has_#{kind}?" do
         !@attrs[kind.to_s].nil?
       end
     end
 
     def is_block?
-      _base_class == "Block"
+      _base_class == 'Block'
     end
 
     def connections
-      @connections ||= @attrs['connections'].collect { |channel| Arena::Channel.new(channel) } if !@attrs['connections'].nil?
+      return if @attrs['connections'].nil?
+
+      @connections ||= @attrs['connections'].collect do |channel|
+        Arena::Channel.new(channel)
+      end
     end
 
     def connected_at
@@ -43,17 +49,19 @@ module Arena
     end
 
     def connected_by
+      return unless connected?
+
       @connected_by ||= Arena::User.new({
-          'id' => @attrs['connected_by_user_id'],
-          'username' => @attrs['connected_by_username'],
-          'full_name' => @attrs['connected_by_username']
-        }) if connected?
+                                          'id' => @attrs['connected_by_user_id'],
+                                          'username' => @attrs['connected_by_username'],
+                                          'full_name' => @attrs['connected_by_username']
+                                        })
     end
 
-  private
+    private
 
     def connected?
       !@attrs['connected_at'].nil?
     end
-  end # Connectable
-end # Arena
+  end
+end

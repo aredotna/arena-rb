@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   class Base
     attr_reader :attrs
@@ -22,7 +24,7 @@ module Arena
     #
     # @param attrs [Hash]
     # @return [Arena::Base]
-    def initialize(attrs={})
+    def initialize(attrs = {})
       @attrs = attrs
     end
 
@@ -35,20 +37,19 @@ module Arena
     #   self
     # end
 
-  protected
+    protected
 
     # @param attr [Symbol]
     # @param other [Arena::Base]
     # @return [Boolean]
     def attr_equal(attr, other)
-      self.class == other.class && !other.send(attr).nil? && send(attr) == other.send(attr)
+      instance_of?(other.class) && !other.send(attr).nil? && send(attr) == other.send(attr)
     end
 
     # @param other [Arena::Base]
     # @return [Boolean]
     def attrs_equal(other)
-      self.class == other.class && !other.attrs.empty? && attrs == other.attrs
+      instance_of?(other.class) && !other.attrs.empty? && attrs == other.attrs
     end
-
   end
 end

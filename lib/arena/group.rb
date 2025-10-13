@@ -1,5 +1,7 @@
-require "arena/story"
-require "arena/summary"
+# frozen_string_literal: true
+
+require 'arena/story'
+require 'arena/summary'
 
 module Arena
   class Group
@@ -17,5 +19,5 @@ module Arena
     def summary
       @summary ||= Arena::Summary.new(stories)
     end
-  end # Group
-end # Arena
+  end
+end

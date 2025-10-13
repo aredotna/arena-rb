@@ -1,0 +1,12 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+
+Metrics:
+  Enabled: false
+
+inherit_from: .rubocop_todo.yml
+
+plugins:
+  - rubocop-rake
+  - rubocop-minitest

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   module Configurable
     attr_accessor :base_domain,
@@ -12,21 +14,21 @@ module Arena
 
     class << self
       def keys
-        @keys ||= [
-          :base_domain,
-          :api_version,
-          :application_id,
-          :application_secret,
-          :access_token,
-          :auth_token,
-          :use_caching,
-          :expires_in
+        @keys ||= %i[
+          base_domain
+          api_version
+          application_id
+          application_secret
+          access_token
+          auth_token
+          use_caching
+          expires_in
         ]
       end
     end
 
     # Allows configuration options to be set in a block
-    # 
+    #
     def configure
       yield self
 
@@ -37,16 +39,16 @@ module Arena
       Arena::Configurable.keys.each do |key|
         instance_variable_set(:"@#{key}", Arena::Default.options[key])
       end
-      
+
       self
     end
 
     alias setup reset!
 
-  private
+    private
 
     def options
-      Hash[Arena::Configurable.keys.map{|key| [key, instance_variable_get(:"@#{key}")]}]
+      Arena::Configurable.keys.to_h { |key| [key, instance_variable_get(:"@#{key}")] }
     end
   end
 end

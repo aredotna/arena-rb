@@ -1,21 +1,22 @@
-require "arena/base"
-require "arena/story"
+# frozen_string_literal: true
+
+require 'arena/base'
+require 'arena/story'
 
 module Arena
   class ChannelFeed < Arena::Base
     attr_reader :type, :limit, :total, :offset, :range_start, :range_end
 
     def stories
-      @stories ||= @attrs["items"].collect { |item| Arena::Story.new(item) } if stories?
+      @stories ||= @attrs['items'].collect { |item| Arena::Story.new(item) } if stories?
     end
 
     alias items stories
 
-  private
+    private
 
     def stories?
-      !@attrs["items"].nil?
+      !@attrs['items'].nil?
     end
-
-  end # Feed
-end # Arena
+  end
+end

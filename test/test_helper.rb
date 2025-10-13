@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 ENV['MT_COMPAT'] = 'true'
 
 require 'minitest/autorun'
-require File.expand_path('../../lib/arena.rb', __FILE__)
+require File.expand_path('../lib/arena.rb', __dir__)
 
 require 'webmock'
 require 'vcr'

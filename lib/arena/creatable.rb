@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'time'
 
 module Arena
   module Creatable
-
     # Time when the object was created on Arena
     #
     # @return [Time]
@@ -17,7 +18,7 @@ module Arena
       @updated_at ||= Time.parse(@attrs['updated_at']) if updated?
     end
 
-  private
+    private
 
     def created?
       !@attrs['created_at'].nil?
@@ -26,6 +27,5 @@ module Arena
     def updated?
       !@attrs['updated_at'].nil?
     end
-
   end
 end

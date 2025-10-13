@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Arena
   class Summary
     attr_reader :indicative, :kinds, :size
@@ -7,5 +9,5 @@ module Arena
       @kinds      = stories.collect { |story| story.item._class }.uniq
       @size       = stories.size
     end
-  end # Summary
-end # Arena
+  end
+end

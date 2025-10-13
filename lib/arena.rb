@@ -1,8 +1,10 @@
-require "arena/version"
+# frozen_string_literal: true
 
-require "arena/client.rb"
-require "arena/default.rb"
-require "arena/configurable.rb"
+require 'arena/version'
+
+require 'arena/client'
+require 'arena/default'
+require 'arena/configurable'
 
 module Arena
   class << self
@@ -13,19 +15,15 @@ module Arena
     # @return [Arena::Client]
     #
     def client
-      if @client
-        @client
-      else
-        @client = Arena::Client.new(options)
-      end
+      @client || @client = Arena::Client.new(options)
     end
 
-  private
+    private
 
-    def method_missing(method, *args, &block)
-      self.client.send(method, *args, &block)
+    def method_missing(method, ...)
+      client.send(method, ...)
     end
-  end # self
-end # Arena
+  end
+end
 
 Arena.setup

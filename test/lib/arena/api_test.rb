@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../test_helper'
 
 describe Arena do
@@ -16,7 +18,7 @@ describe Arena do
       error = assert_raises StandardError do
         Arena.channel('delightfully-absurd')
       end
-      assert_equal "400: Internal Server Error - Something went wrong.", error.message
+      assert_equal '400: Internal Server Error - Something went wrong.', error.message
     end
   end
 end

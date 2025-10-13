@@ -1,9 +1,11 @@
 #!/usr/bin/env rake
-require "bundler/gem_tasks"
+# frozen_string_literal: true
 
-desc "Open an irb session preloaded with this library"
+require 'bundler/gem_tasks'
+
+desc 'Open an irb session preloaded with this library.'
 task :console do
-  sh "irb -rubygems -I lib -r arena.rb"
+  sh 'irb -rubygems -I lib -r arena.rb'
 end
 
 require 'rake/testtask'
@@ -14,4 +16,7 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-task :default => :test
+require 'rubocop/rake_task'
+RuboCop::RakeTask.new
+
+task default: %i[rubocop test]

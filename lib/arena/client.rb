@@ -1,8 +1,10 @@
-require "arena/configurable"
-require "arena/error"
-require "arena/api"
-require "httparty"
-require "json"
+# frozen_string_literal: true
+
+require 'arena/configurable'
+require 'arena/error'
+require 'arena/api'
+require 'httparty'
+require 'json'
 
 module Arena
   class Client
@@ -10,7 +12,7 @@ module Arena
     include Arena::Configurable
     include Arena::API
 
-    def initialize(options={})
+    def initialize(options = {})
       Arena::Configurable.keys.each do |key|
         instance_variable_set(:"@#{key}", options[key] || Arena.instance_variable_get(:"@#{key}"))
       end
@@ -18,23 +20,23 @@ module Arena
 
     # Performs HTTP GET POST PUT and DELETE requests
     #
-    %w(get post put delete).each do |method|
-      define_method method do |path, options={}|
+    %w[get post put delete].each do |method|
+      define_method method do |path, options = {}|
         options = { query: options, headers: set_headers }
 
         request(__method__, path, options)
       end
     end
 
-  private
+    private
 
     def set_headers
       if !@access_token.nil?
-        { "Authorization" => "Bearer #{@access_token}" }
+        { 'Authorization' => "Bearer #{@access_token}" }
       elsif !@auth_token.nil?
-        { "X-AUTH-TOKEN" => @auth_token }
+        { 'X-AUTH-TOKEN' => @auth_token }
       else
-        { }
+        {}
       end
     end
 
@@ -48,18 +50,18 @@ module Arena
 
     def request(method, path, options)
       response = self.class.send(method, "https://#{@base_domain}/#{@api_version}#{path}", options)
-      
-      parsed = if response.content_type&.include?('application/json')
-        begin
-          JSON.parse(response.body)
-        rescue JSON::ParserError, TypeError
-          nil   
-        end
-      else
-        response.body
-      end
 
-      raise Arena::Error.new(error_message(parsed)) if error?(response)
+      parsed = if response.content_type&.include?('application/json')
+                 begin
+                   JSON.parse(response.body)
+                 rescue JSON::ParserError, TypeError
+                   nil
+                 end
+               else
+                 response.body
+               end
+
+      raise Arena::Error, error_message(parsed) if error?(response)
 
       parsed
     end

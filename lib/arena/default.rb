@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 module Arena
   module Default
-    BASE_DOMAIN = "api.are.na" unless defined? BASE_DOMAIN
-    API_VERSION = "v2" unless defined? API_VERSION
+    BASE_DOMAIN = 'api.are.na' unless defined? BASE_DOMAIN
+    API_VERSION = 'v2' unless defined? API_VERSION
     USE_CACHING = false unless defined? USE_CACHING
     EXPIRES_IN  = 600 unless defined? EXPIRES_IN # 10 minutes
 
     class << self
       def options
-        Hash[Arena::Configurable.keys.map{|key| [key, send(key)]}]
+        Arena::Configurable.keys.to_h { |key| [key, send(key)] }
       end
 
       def api_version
@@ -19,19 +21,19 @@ module Arena
       end
 
       def application_id
-        ENV["APPLICATION_ID"]
+        ENV.fetch('APPLICATION_ID', nil)
       end
 
       def application_secret
-        ENV["APPLICATION_SECRET"]
+        ENV.fetch('APPLICATION_SECRET', nil)
       end
 
       def access_token
-        ENV["APPLICATION_SECRET"]
+        ENV.fetch('APPLICATION_SECRET', nil)
       end
 
       def auth_token
-        ENV["AUTH_TOKEN"]
+        ENV.fetch('AUTH_TOKEN', nil)
       end
 
       def use_caching

@@ -1,4 +1,6 @@
-require "arena/cache/adaptor/generic"
+# frozen_string_literal: true
+
+require 'arena/cache/adaptor/generic'
 
 module Arena
   module Cache
