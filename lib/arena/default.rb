@@ -4,8 +4,6 @@ module Arena
   module Default
     BASE_DOMAIN = 'api.are.na' unless defined? BASE_DOMAIN
     API_VERSION = 'v2' unless defined? API_VERSION
-    USE_CACHING = false unless defined? USE_CACHING
-    EXPIRES_IN  = 600 unless defined? EXPIRES_IN # 10 minutes
 
     class << self
       def options
@@ -34,14 +32,6 @@ module Arena
 
       def auth_token
         ENV.fetch('ARENA_AUTH_TOKEN', nil)
-      end
-
-      def use_caching
-        USE_CACHING
-      end
-
-      def expires_in
-        EXPIRES_IN
       end
 
       def user_agent
