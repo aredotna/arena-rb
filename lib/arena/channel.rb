@@ -24,7 +24,7 @@ module Arena
     end
 
     def contents
-      @contents ||= @attrs['contents'].collect { |object| "Arena::#{object['class']}".constantize.new(object) }
+      @contents ||= @attrs['contents'].collect { |object| Arena::Base.class_for(object['class']).new(object) }
     end
 
     def contents_updated_at
