@@ -21,19 +21,19 @@ module Arena
       end
 
       def application_id
-        ENV.fetch('APPLICATION_ID', nil)
+        ENV.fetch('ARENA_CLIENT_ID', nil)
       end
 
       def application_secret
-        ENV.fetch('APPLICATION_SECRET', nil)
+        ENV.fetch('ARENA_CLIENT_SECRET', nil)
       end
 
       def access_token
-        ENV.fetch('APPLICATION_SECRET', nil)
+        ENV.fetch('ARENA_ACCESS_TOKEN', nil)
       end
 
       def auth_token
-        ENV.fetch('AUTH_TOKEN', nil)
+        ENV.fetch('ARENA_AUTH_TOKEN', nil)
       end
 
       def use_caching
