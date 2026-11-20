@@ -1,14 +1,27 @@
-name: test
+name: Test
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   test:
-    runs-on: ubuntu-latest
+    name: Test (Ruby ${{ matrix.entry.ruby }})
+    runs-on: ${{ matrix.entry.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        entry:
+          - { ruby: '3.0', os: ubuntu-22.04 }
+          - { ruby: '4.0', os: ubuntu-latest }
     steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - name: Check Out
+        uses: actions/checkout@v7
+      - name: Set Up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4.6'
+          ruby-version: ${{ matrix.entry.ruby }}
           bundler-cache: true
-      - run: bundle exec rake test
+      - name: Run Tests
+        run: bundle exec rake test

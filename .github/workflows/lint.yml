@@ -1,14 +1,21 @@
-name: lint
+name: Lint
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   rubocop:
+    name: RuboCop
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - name: Check Out
+        uses: actions/checkout@v7
+      - name: Set Up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4.6'
+          ruby-version: '4.0'
           bundler-cache: true
-      - run: bundle exec rubocop
+      - name: Run RuboCop
+        run: bundle exec rubocop
