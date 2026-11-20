@@ -8,4 +8,5 @@
 - [#23](https://github.com/aredotna/arena-rb/pull/23): Removed the unused `Arena::Cache` adaptors, `Arena::Error::CacheError` and the `use_caching` and `expires_in` settings - [@dblock](https://github.com/dblock).
 - [#24](https://github.com/aredotna/arena-rb/pull/24): Removed the global `String#constantize` monkey patch and only instantiate `Arena::Base` classes from API class names - [@dblock](https://github.com/dblock).
 - [#25](https://github.com/aredotna/arena-rb/pull/25): Added the MIT license and project links to the gemspec, and package only `lib` and documentation - [@dblock](https://github.com/dblock).
+- [#26](https://github.com/aredotna/arena-rb/pull/26): Added RubyGems, test and lint badges and reorganized the README around the v3 API - [@dblock](https://github.com/dblock).
 - Your contribution here.
