@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.are.na/v3/users/cab/contents?per=2&type=Channel
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - arena-rb/0.2.2 (+https://github.com/aredotna/arena-rb)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Nov 2026 20:08:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=300, public
+      Etag:
+      - W/"87a451bf43796925292c77d32ceee54a"
+      Nel:
+      - '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Report-To:
+      - '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=fW4MkTyUXJ%2FLA8L2pC0gjMgou1UmyWCeX2bRnMQq6Rc%3D\u0026sid=af571f24-03ee-46d1-9f90-ab9030c2c74c\u0026ts=1795205329"}],"max_age":3600}'
+      Reporting-Endpoints:
+      - heroku-nel="https://nel.heroku.com/reports?s=fW4MkTyUXJ%2FLA8L2pC0gjMgou1UmyWCeX2bRnMQq6Rc%3D&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&ts=1795205329"
+      Server:
+      - cloudflare
+      Vary:
+      - Authorization, Origin
+      Via:
+      - 2.0 heroku-router
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Bucket:
+      - read-minute
+      X-Ratelimit-Cost:
+      - '1'
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Policy:
+      - 30;w=60
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1795205340'
+      X-Ratelimit-Tier:
+      - guest
+      X-Ratelimit-Window:
+      - '60'
+      X-Request-Id:
+      - 879b7847-cb6d-deed-d2b1-06163af10081
+      X-Runtime:
+      - '0.089524'
+      X-Xss-Protection:
+      - '0'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=15552000
+      Cf-Ray:
+      - a5da16bec968ccb6-EWR
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"current_page":1,"next_page":2,"prev_page":null,"per_page":2,"total_pages":233,"total_count":465,"has_more_pages":true},"data":[{"id":6026770,"type":"Channel","created_at":"2026-11-18T18:28:42Z","updated_at":"2026-11-18T18:55:09Z","slug":"poster-asset-library","title":"Poster
+        asset library","description":{"markdown":"A place for the sorts of things
+        that go on posters","html":"\u003cp\u003eA place for the sorts of things that
+        go on posters\u003c/p\u003e","plain":"A place for the sorts of things that
+        go on posters"},"state":"available","visibility":"public","metadata":null,"owner":{"id":94135,"type":"Group","name":"RISD
+        on Are.na Research Group","slug":"risd-on-are-na-research-group","avatar":null,"initials":"ROAR"},"counts":{"blocks":3,"channels":0,"contents":3,"collaborators":0},"can":{"add_to":false,"update":false,"destroy":false,"manage_collaborators":false},"collaborators":[],"_links":{"self":{"href":"https://api.are.na/v3/channels/poster-asset-library"},"owner":{"href":"https://api.are.na/v3/groups/risd-on-are-na-research-group"},"contents":{"href":"https://api.are.na/v3/channels/poster-asset-library/contents"},"connections":{"href":"https://api.are.na/v3/channels/poster-asset-library/connections"},"followers":{"href":"https://api.are.na/v3/channels/poster-asset-library/followers"}}},{"id":6035854,"type":"Channel","created_at":"2026-11-20T17:37:28Z","updated_at":"2026-11-20T17:45:01Z","slug":"are-na-annual-vol-8-score","title":"Are.na
+        Annual vol. 8: Score","description":null,"state":"available","visibility":"closed","metadata":null,"owner":{"id":13489,"type":"Group","name":"Are.na
+        Editorial","slug":"are-na-editorial","avatar":null,"initials":"AE"},"counts":{"blocks":16,"channels":0,"contents":16,"collaborators":0},"can":{"add_to":false,"update":false,"destroy":false,"manage_collaborators":false},"collaborators":[],"_links":{"self":{"href":"https://api.are.na/v3/channels/are-na-annual-vol-8-score"},"owner":{"href":"https://api.are.na/v3/groups/are-na-editorial"},"contents":{"href":"https://api.are.na/v3/channels/are-na-annual-vol-8-score/contents"},"connections":{"href":"https://api.are.na/v3/channels/are-na-annual-vol-8-score/connections"},"followers":{"href":"https://api.are.na/v3/channels/are-na-annual-vol-8-score/followers"}}}]}'
+  recorded_at: Fri, 20 Nov 2026 20:08:49 GMT
+recorded_with: VCR 6.4.1

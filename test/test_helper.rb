@@ -4,12 +4,16 @@ require 'minitest/autorun'
 require File.expand_path('../lib/arena.rb', __dir__)
 
 require 'webmock'
+require 'webmock/minitest'
 require 'vcr'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
   c.hook_into :webmock
   c.default_cassette_options = { record: :new_episodes }
+  c.filter_sensitive_data('<ACCESS_TOKEN>') do |interaction|
+    interaction.request.headers['Authorization']&.first&.delete_prefix('Bearer ')
+  end
   c.before_record do |i|
     i.response.body.force_encoding('UTF-8')
   end

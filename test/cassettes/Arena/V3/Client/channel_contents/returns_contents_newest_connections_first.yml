@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.are.na/v3/channels/arena-influences/contents?per=2&sort=created_at_desc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - arena-rb/0.2.2 (+https://github.com/aredotna/arena-rb)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Nov 2026 20:08:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=300, public
+      Etag:
+      - W/"6217efb0dfee259c193f553b1ab776a9"
+      Nel:
+      - '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Report-To:
+      - '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=uT2a%2FV7122tYP1P8ODmcLtqvayWvmNm%2BYzlgBoVFrBQ%3D\u0026sid=af571f24-03ee-46d1-9f90-ab9030c2c74c\u0026ts=1795205330"}],"max_age":3600}'
+      Reporting-Endpoints:
+      - heroku-nel="https://nel.heroku.com/reports?s=uT2a%2FV7122tYP1P8ODmcLtqvayWvmNm%2BYzlgBoVFrBQ%3D&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&ts=1795205330"
+      Server:
+      - cloudflare
+      Vary:
+      - Authorization, Origin
+      Via:
+      - 2.0 heroku-router
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Bucket:
+      - read-minute
+      X-Ratelimit-Cost:
+      - '1'
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Policy:
+      - 30;w=60
+      X-Ratelimit-Remaining:
+      - '26'
+      X-Ratelimit-Reset:
+      - '1795205340'
+      X-Ratelimit-Tier:
+      - guest
+      X-Ratelimit-Window:
+      - '60'
+      X-Request-Id:
+      - 88aaaae0-57f5-7dff-3de1-f3adbdb40bc5
+      X-Runtime:
+      - '0.041294'
+      X-Xss-Protection:
+      - '0'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=15552000
+      Cf-Ray:
+      - a5da16c20fd6c180-EWR
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"current_page":1,"next_page":2,"prev_page":null,"per_page":2,"total_pages":64,"total_count":128,"has_more_pages":true},"data":[{"id":9613792,"type":"Image","created_at":"2020-11-23T07:48:34Z","updated_at":"2026-10-16T10:37:12Z","base_type":"Block","title":"Sitterwerk,
+        Dynamic Order, 2006","description":{"markdown":"When thinking about what the
+        future of publishing may look like, I was reminded of Sitterwerk’s Dynamic
+        Library (thank you Jayme). This library uses RFID technology to digitally
+        track and systemize the volumes that run throughout its space. This technology
+        frees the library from traditional modes of organization, creating novel ways
+        to experience the content. Each user of the collection can shape the space
+        in new combinations and enjoy serendipitous discoveries. The interactive workspace
+        is accompanied by a digital library, which catalogues the inventory in real
+        time. The tables throughout the library are lined with RFID antennas that
+        track the books lying on the table’s surface, and upload them directly into
+        a digital space. An individual can use this as a private archive throughout
+        the process of research. The archive can then be printed into a physical booklet,
+        or “Bibliozine,” which can then be added back to the library. \nI think what
+        is so interesting about The Dynamic Order in Sitterwerk is that it is an intersection
+        between the physical, the haptic, the digital, and the personal. The dynamism
+        of the space creates a new sense of accessibility and enriches the research
+        process. \nModes of publication continue to morph and flourish, and I wonder
+        how combinations between the new and the old, between technology and the analogue,
+        will produce novel ways of publishing. \n\nhttps://www.sitterwerk.ch/En/Dynamische-Ordnung","html":"\u003cp\u003eWhen
+        thinking about what the future of publishing may look like, I was reminded
+        of Sitterwerk’s Dynamic Library (thank you Jayme). This library uses RFID
+        technology to digitally track and systemize the volumes that run throughout
+        its space. This technology frees the library from traditional modes of organization,
+        creating novel ways to experience the content. Each user of the collection
+        can shape the space in new combinations and enjoy serendipitous discoveries.
+        The interactive workspace is accompanied by a digital library, which catalogues
+        the inventory in real time. The tables throughout the library are lined with
+        RFID antennas that track the books lying on the table’s surface, and upload
+        them directly into a digital space. An individual can use this as a private
+        archive throughout the process of research. The archive can then be printed
+        into a physical booklet, or “Bibliozine,” which can then be added back to
+        the library. \u003cbr\u003e\nI think what is so interesting about The Dynamic
+        Order in Sitterwerk is that it is an intersection between the physical, the
+        haptic, the digital, and the personal. The dynamism of the space creates a
+        new sense of accessibility and enriches the research process. \u003cbr\u003e\nModes
+        of publication continue to morph and flourish, and I wonder how combinations
+        between the new and the old, between technology and the analogue, will produce
+        novel ways of publishing. \u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\"https://www.sitterwerk.ch/En/Dynamische-Ordnung\"
+        target=\"_blank\" rel=\"nofollow noopener\"\u003ehttps://www.sitterwerk.ch/En/Dynamische-Ordnung\u003c/a\u003e\u003c/p\u003e","plain":"When
+        thinking about what the future of publishing may look like, I was reminded
+        of Sitterwerk’s Dynamic Library (thank you Jayme). This library uses RFID
+        technology to digitally track and systemize the volumes that run throughout
+        its space. This technology frees the library from traditional modes of organization,
+        creating novel ways to experience the content. Each user of the collection
+        can shape the space in new combinations and enjoy serendipitous discoveries.
+        The interactive workspace is accompanied by a digital library, which catalogues
+        the inventory in real time. The tables throughout the library are lined with
+        RFID antennas that track the books lying on the table’s surface, and upload
+        them directly into a digital space. An individual can use this as a private
+        archive throughout the process of research. The archive can then be printed
+        into a physical booklet, or “Bibliozine,” which can then be added back to
+        the library. \nI think what is so interesting about The Dynamic Order in Sitterwerk
+        is that it is an intersection between the physical, the haptic, the digital,
+        and the personal. The dynamism of the space creates a new sense of accessibility
+        and enriches the research process. \nModes of publication continue to morph
+        and flourish, and I wonder how combinations between the new and the old, between
+        technology and the analogue, will produce novel ways of publishing. \nhttps://www.sitterwerk.ch/En/Dynamische-Ordnung"},"state":"available","visibility":"public","comment_count":0,"metadata":null,"user":{"id":194023,"type":"User","name":"Rooby
+        Scoobydoo","slug":"rooby-scoobydoo","username":"rooby-scoobydoo","avatar":null,"initials":"RS"},"source":null,"image":{"alt_text":null,"blurhash":null,"width":2121,"height":1268,"src":"https://d2w9rnfcy7mm78.cloudfront.net/9613792/original_08c351c5d78860d9bdb194cd6b4a7dd6.jpg?1606117715","aspect_ratio":1.6727,"content_type":"image/jpeg","filename":"08c351c5d78860d9bdb194cd6b4a7dd6.jpg","file_size":1925505,"updated_at":"2020-11-23T07:48:35Z","small":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","width":400,"height":239},"medium":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19","width":1200,"height":717},"large":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwMCwiaGVpZ2h0IjozNjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19","width":1800,"height":1076},"square":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19","width":1200,"height":717}},"_links":{"self":{"href":"https://api.are.na/v3/blocks/9613792"},"user":{"href":"https://api.are.na/v3/users/rooby-scoobydoo"},"connections":{"href":"https://api.are.na/v3/blocks/9613792/connections"},"comments":{"href":"https://api.are.na/v3/blocks/9613792/comments"}},"connection":{"id":62105961,"position":128,"pinned":false,"metadata":null,"connected_at":"2024-08-03T01:37:15Z","connected_by":{"id":15,"type":"User","name":"Charles
+        Broskoski","slug":"cab","username":"cab","avatar":"https://static.avatars.are.na/15/large_f91bdac52d14ef988c9818884d6865db.jpg?1616377630","initials":"CB","_links":{"self":{"href":"https://api.are.na/v3/users/cab"}}}}},{"id":29774986,"type":"Image","created_at":"2024-08-03T00:29:33Z","updated_at":"2026-11-13T16:20:00Z","base_type":"Block","title":"AN
+        ACCUMULATION OF INFORMATION TAKEN FROM HERE TO THERE (1970)","description":{"markdown":"Lawrence
+        Weiner\n\nhttps://www.speronewestwater.com/exhibitions/an-accumulation-of-information-taken-from-here-to-there","html":"\u003cp\u003eLawrence
+        Weiner\u003c/p\u003e\n\n\u003cp\u003e\u003ca href=\"https://www.speronewestwater.com/exhibitions/an-accumulation-of-information-taken-from-here-to-there\"
+        target=\"_blank\" rel=\"nofollow noopener\"\u003ehttps://www.speronewestwater.com/exhibitions/an-accumulation-of-information-taken-from-here-to-there\u003c/a\u003e\u003c/p\u003e","plain":"Lawrence
+        Weiner\nhttps://www.speronewestwater.com/exhibitions/an-accumulation-of-information-taken-from-here-to-there"},"state":"available","visibility":"public","comment_count":1,"metadata":null,"user":{"id":17,"type":"User","name":"Damon
+        Zucconi","slug":"damon","username":"damon","avatar":"https://static.avatars.are.na/17/large_fcc5de243be135e7df7bbc06aef0ff1d.png?1794488116","initials":"DZ"},"source":{"url":"https://gallery98.org/2022/group-show-with-lawrence-weiner-joseph-kosuth-alighiero-boetti-on-kawara-and-others-card-sperone-westwater-gallery-2012/","title":"Gallery
+        98 | An Accumulation of Information Taken from Here to There, Group Show with
+        Lawrence Weiner, Joseph Kosuth, Alighiero Boetti, On Kawara, and Others, Card,
+        Sperone Westwater Gallery, 2012","provider":{"name":"gallery98.org","url":"https://gallery98.org"}},"image":{"alt_text":null,"blurhash":null,"width":2048,"height":1372,"src":"https://d2w9rnfcy7mm78.cloudfront.net/29774986/original_7c82b61a80fddb4f99555926decae37d.jpg?1722644975","aspect_ratio":1.4927,"content_type":"image/jpeg","filename":"7c82b61a80fddb4f99555926decae37d.jpg","file_size":168432,"updated_at":"2024-08-03T00:29:35Z","small":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=","width":400,"height":268},"medium":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","width":1200,"height":804},"large":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM2MDAsImhlaWdodCI6MzYwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","width":1800,"height":1206},"square":{"src":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","src_2x":"https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==","width":1200,"height":804}},"_links":{"self":{"href":"https://api.are.na/v3/blocks/29774986"},"user":{"href":"https://api.are.na/v3/users/damon"},"connections":{"href":"https://api.are.na/v3/blocks/29774986/connections"},"comments":{"href":"https://api.are.na/v3/blocks/29774986/comments"}},"connection":{"id":62104316,"position":127,"pinned":false,"metadata":null,"connected_at":"2024-08-03T00:29:33Z","connected_by":{"id":17,"type":"User","name":"Damon
+        Zucconi","slug":"damon","username":"damon","avatar":"https://static.avatars.are.na/17/large_fcc5de243be135e7df7bbc06aef0ff1d.png?1794488116","initials":"DZ","_links":{"self":{"href":"https://api.are.na/v3/users/damon"}}}}}]}'
+  recorded_at: Fri, 20 Nov 2026 20:08:50 GMT
+recorded_with: VCR 6.4.1
