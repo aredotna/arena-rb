@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'arena/core_ext/string'
 require 'arena/base'
 require 'arena/channel'
 require 'arena/user'
@@ -20,7 +19,7 @@ module Arena
         unless instance_variable_get "@#{method}s"
           instance_variable_set("@#{method}s",
                                 @attrs["#{method}s"].collect do |element|
-                                  "Arena::#{method.capitalize}".constantize.new(element)
+                                  Arena::Base.class_for(method.capitalize).new(element)
                                 end)
         end
         instance_variable_get "@#{method}s"

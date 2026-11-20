@@ -1,10 +1,25 @@
 # frozen_string_literal: true
 
+require 'arena/error'
+
 module Arena
   class Base
     attr_reader :attrs
 
     alias to_hash attrs
+
+    # Returns the Arena::Base subclass for a class name returned by the API, e.g. "Text" for Arena::Text.
+    #
+    # @param name [String]
+    # @return [Class]
+    def self.class_for(name)
+      klass = Arena.const_get(name.to_s, false) if name.to_s.match?(/\A[A-Z]\w*\z/)
+      raise Arena::Error, "Unexpected class #{name.inspect}" unless klass.is_a?(Class) && klass <= Arena::Base
+
+      klass
+    rescue NameError
+      raise Arena::Error, "Unexpected class #{name.inspect}"
+    end
 
     # Define methods that retrieve the value from an initialized instance
     # variable Hash, using the attribute as a key

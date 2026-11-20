@@ -25,7 +25,7 @@ module Arena
 
         unless instance_variable_get "@#{method}"
           instance_variable_set("@#{method}",
-                                "Arena::#{@attrs[type]}".constantize.new(@attrs[method]))
+                                Arena::Base.class_for(@attrs[type]).new(@attrs[method]))
         end
         instance_variable_get "@#{method}"
       end
