@@ -49,11 +49,17 @@ module Arena
     end
 
     # Returns a paginated feed for a given Channel
+    #
+    # @deprecated The v2 feed endpoints have been disabled by Are.na and return 410 Gone,
+    #   use Arena.v3.channel_contents instead.
     def channel_feed(id, options = {})
       object_from_response(Arena::ChannelFeed, :get, "/channel/#{id}/feed", options)
     end
 
     # Returns a paginated feed for a given User
+    #
+    # @deprecated The v2 feed endpoints have been disabled by Are.na and return 410 Gone,
+    #   use Arena.v3.user_contents instead.
     def user_feed(id, options = {})
       object_from_response(Arena::UserFeed, :get, "/user/#{id}/feed", options)
     end

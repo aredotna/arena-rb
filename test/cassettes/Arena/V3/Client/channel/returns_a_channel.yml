@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.are.na/v3/channels/arena-influences
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - arena-rb/0.2.2 (+https://github.com/aredotna/arena-rb)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Nov 2026 20:08:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=300, public
+      Etag:
+      - W/"327467608a198532b94ba626d51d8cc7"
+      Nel:
+      - '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Report-To:
+      - '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=uT2a%2FV7122tYP1P8ODmcLtqvayWvmNm%2BYzlgBoVFrBQ%3D\u0026sid=af571f24-03ee-46d1-9f90-ab9030c2c74c\u0026ts=1795205330"}],"max_age":3600}'
+      Reporting-Endpoints:
+      - heroku-nel="https://nel.heroku.com/reports?s=uT2a%2FV7122tYP1P8ODmcLtqvayWvmNm%2BYzlgBoVFrBQ%3D&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&ts=1795205330"
+      Server:
+      - cloudflare
+      Vary:
+      - Authorization, Origin
+      Via:
+      - 2.0 heroku-router
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Bucket:
+      - read-minute
+      X-Ratelimit-Cost:
+      - '1'
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Policy:
+      - 30;w=60
+      X-Ratelimit-Remaining:
+      - '24'
+      X-Ratelimit-Reset:
+      - '1795205340'
+      X-Ratelimit-Tier:
+      - guest
+      X-Ratelimit-Window:
+      - '60'
+      X-Request-Id:
+      - 13f8d676-df94-66f1-7c44-4b2cfc3d1238
+      X-Runtime:
+      - '0.017018'
+      X-Xss-Protection:
+      - '0'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=15552000
+      Cf-Ray:
+      - a5da16c398f42977-EWR
+    body:
+      encoding: UTF-8
+      string: '{"id":275,"type":"Channel","created_at":"2011-08-12T17:53:48Z","updated_at":"2026-11-15T05:46:30Z","slug":"arena-influences","title":"Arena
+        Influences","description":{"markdown":" *We are as gods and might as well
+        get good at it.*  - Stewart Brand\n","html":"\u003cp\u003e\u003cem\u003eWe
+        are as gods and might as well get good at it.\u003c/em\u003e  - Stewart Brand\u003c/p\u003e","plain":"
+        We are as gods and might as well get good at it.  - Stewart Brand"},"state":"available","visibility":"closed","metadata":null,"owner":{"id":289,"type":"Group","name":"Are.na
+        Team","slug":"are-na-team","avatar":"https://static.avatars.are.na/groups/289/large_1c450892ff7f08b021c9524d8a8f1c15.png?1546970769","initials":"AT"},"counts":{"blocks":126,"channels":2,"contents":128,"collaborators":9},"can":{"add_to":false,"update":false,"destroy":false,"manage_collaborators":false},"collaborators":[{"id":4094,"type":"User","name":"Meg
+        Miller","slug":"meg-miller","username":"meg-miller","avatar":"https://static.avatars.are.na/4094/large_f3db7f44de1bb70e00b733c71b6ac80e.jpg?1496713662","initials":"MM","_links":{"self":{"href":"https://api.are.na/v3/users/meg-miller"}}},{"id":15,"type":"User","name":"Charles
+        Broskoski","slug":"cab","username":"cab","avatar":"https://static.avatars.are.na/15/large_f91bdac52d14ef988c9818884d6865db.jpg?1616377630","initials":"CB","_links":{"self":{"href":"https://api.are.na/v3/users/cab"}}},{"id":14,"type":"User","name":"John
+        Michael Boling","slug":"jmb","username":"jmb","avatar":"https://static.avatars.are.na/14/large_05bc87b82ddc3b7972ad5fa04e146372.png?1373980507","initials":"JMB","_links":{"self":{"href":"https://api.are.na/v3/users/jmb"}}},{"id":16,"type":"User","name":"Dena
+        Yago","slug":"dena-yago","username":"dena-yago","avatar":"https://static.avatars.are.na/16/large_a862f63286852fd06eac13cebedb62f8.png?1371049435","initials":"DY","_links":{"self":{"href":"https://api.are.na/v3/users/dena-yago"}}},{"id":17,"type":"User","name":"Damon
+        Zucconi","slug":"damon","username":"damon","avatar":"https://static.avatars.are.na/17/large_fcc5de243be135e7df7bbc06aef0ff1d.png?1794488116","initials":"DZ","_links":{"self":{"href":"https://api.are.na/v3/users/damon"}}},{"id":729,"type":"User","name":"Daniel
+        Brewster","slug":"daniel-brewster","username":"daniel-brewster","avatar":"https://static.avatars.are.na/729/large_fc1311de5b19a55763028cb19751b2e3.png?1374531508","initials":"DB","_links":{"self":{"href":"https://api.are.na/v3/users/daniel-brewster"}}},{"id":2424,"type":"User","name":"Morgan
+        Sutherland","slug":"morgan-sutherland","username":"morgan-sutherland","avatar":"https://static.avatars.are.na/2424/large_6a4dc624dc43f305227a9acb7e0539ac.png?1542593718","initials":"MS","_links":{"self":{"href":"https://api.are.na/v3/users/morgan-sutherland"}}},{"id":812,"type":"User","name":"Daniel
+        Pianetti","slug":"danpia","username":"danpia","avatar":"https://static.avatars.are.na/812/large_1ef0465a13b844339d6eceb1b74dba2e.jpg?1438148396","initials":"DP","_links":{"self":{"href":"https://api.are.na/v3/users/danpia"}}},{"id":2746,"type":"User","name":"Christopher
+        Barley","slug":"christopher-barley","username":"christopher-barley","avatar":"https://static.avatars.are.na/2746/large_6296d49f4ef3d4a8cfa47e62fb695179.jpg?1528409452","initials":"CB","_links":{"self":{"href":"https://api.are.na/v3/users/christopher-barley"}}}],"_links":{"self":{"href":"https://api.are.na/v3/channels/arena-influences"},"owner":{"href":"https://api.are.na/v3/groups/are-na-team"},"contents":{"href":"https://api.are.na/v3/channels/arena-influences/contents"},"connections":{"href":"https://api.are.na/v3/channels/arena-influences/connections"},"followers":{"href":"https://api.are.na/v3/channels/arena-influences/followers"}}}'
+  recorded_at: Fri, 20 Nov 2026 20:08:50 GMT
+recorded_with: VCR 6.4.1

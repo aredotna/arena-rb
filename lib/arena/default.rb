@@ -43,6 +43,10 @@ module Arena
       def expires_in
         EXPIRES_IN
       end
+
+      def user_agent
+        "arena-rb/#{Arena::VERSION} (+https://github.com/aredotna/arena-rb)"
+      end
     end
   end
 end

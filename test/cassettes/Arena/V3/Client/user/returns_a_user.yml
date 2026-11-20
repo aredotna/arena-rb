@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.are.na/v3/users/cab
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - arena-rb/0.2.2 (+https://github.com/aredotna/arena-rb)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Nov 2026 20:08:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=300, public
+      Etag:
+      - W/"a5f667be0eefa2b10a5abc4345910d3e"
+      Nel:
+      - '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Report-To:
+      - '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=uT2a%2FV7122tYP1P8ODmcLtqvayWvmNm%2BYzlgBoVFrBQ%3D\u0026sid=af571f24-03ee-46d1-9f90-ab9030c2c74c\u0026ts=1795205330"}],"max_age":3600}'
+      Reporting-Endpoints:
+      - heroku-nel="https://nel.heroku.com/reports?s=uT2a%2FV7122tYP1P8ODmcLtqvayWvmNm%2BYzlgBoVFrBQ%3D&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&ts=1795205330"
+      Server:
+      - cloudflare
+      Vary:
+      - Authorization, Origin
+      Via:
+      - 2.0 heroku-router
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Ratelimit-Bucket:
+      - read-minute
+      X-Ratelimit-Cost:
+      - '1'
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Policy:
+      - 30;w=60
+      X-Ratelimit-Remaining:
+      - '27'
+      X-Ratelimit-Reset:
+      - '1795205340'
+      X-Ratelimit-Tier:
+      - guest
+      X-Ratelimit-Window:
+      - '60'
+      X-Request-Id:
+      - 6bbb927c-c899-53f9-3eb1-0d5f74a2a153
+      X-Runtime:
+      - '0.061120'
+      X-Xss-Protection:
+      - '0'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=15552000
+      Cf-Ray:
+      - a5da16c0eaa8728f-EWR
+    body:
+      encoding: UTF-8
+      string: "{\"id\":15,\"type\":\"User\",\"created_at\":\"2011-06-21T01:41:32Z\",\"updated_at\":\"2026-10-30T17:16:48Z\",\"name\":\"Charles
+        Broskoski\",\"slug\":\"cab\",\"username\":\"cab\",\"avatar\":\"https://static.avatars.are.na/15/large_f91bdac52d14ef988c9818884d6865db.jpg?1616377630\",\"initials\":\"CB\",\"bio\":{\"markdown\":\"One
+        of the many Are.na co-founders \U0001F3A9\\n\\nhttp://charlesbroskoski.com\\n.\\n.\\n.\\n.\\nindex
+        (WIP)\\n\\n---\\n```\\n–  current thread\\n=  practice-related\\n~  business-related\\n**
+        are.na related\\n.  buffer\\n\\u0026  list\\n+  person I'm interested in\\n```\",\"html\":\"\\u003cp\\u003eOne
+        of the many Are.na co-founders \U0001F3A9\\u003c/p\\u003e\\n\\n\\u003cp\\u003e\\u003ca
+        href=\\\"http://charlesbroskoski.com\\\" target=\\\"_blank\\\" rel=\\\"nofollow
+        noopener\\\"\\u003ehttp://charlesbroskoski.com\\u003c/a\\u003e\\u003cbr\\u003e\\n.\\u003cbr\\u003e\\n.\\u003cbr\\u003e\\n.\\u003cbr\\u003e\\n.\\u003cbr\\u003e\\nindex
+        (WIP)\\u003c/p\\u003e\\n\\n\\u003chr\\u003e\\n\\n\\u003cpre\\u003e\\u003ccode\\u003e–
+        \ current thread\\n=  practice-related\\n~  business-related\\n** are.na related\\n.
+        \ buffer\\n\\u0026amp;  list\\n+  person I'm interested in\\n\\u003c/code\\u003e\\u003c/pre\\u003e\",\"plain\":\"One
+        of the many Are.na co-founders \U0001F3A9\\nhttp://charlesbroskoski.com\\n.\\n.\\n.\\n.\\nindex
+        (WIP)\\n–  current thread\\n=  practice-related\\n~  business-related\\n**
+        are.na related\\n.  buffer\\n\\u0026  list\\n+  person I'm interested in\"},\"badge\":\"staff\",\"tier\":\"supporter\",\"counts\":{\"channels\":461,\"followers\":5198,\"following\":11233},\"_links\":{\"self\":{\"href\":\"https://api.are.na/v3/users/cab\"},\"contents\":{\"href\":\"https://api.are.na/v3/users/cab/contents\"},\"followers\":{\"href\":\"https://api.are.na/v3/users/cab/followers\"},\"following\":{\"href\":\"https://api.are.na/v3/users/cab/following\"},\"groups\":{\"href\":\"https://api.are.na/v3/users/cab/groups\"}}}"
+  recorded_at: Fri, 20 Nov 2026 20:08:50 GMT
+recorded_with: VCR 6.4.1

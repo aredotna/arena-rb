@@ -31,12 +31,13 @@ module Arena
     private
 
     def set_headers
+      headers = @user_agent ? { 'User-Agent' => @user_agent } : {}
       if !@access_token.nil?
-        { 'Authorization' => "Bearer #{@access_token}" }
+        headers.merge('Authorization' => "Bearer #{@access_token}")
       elsif !@auth_token.nil?
-        { 'X-AUTH-TOKEN' => @auth_token }
+        headers.merge('X-AUTH-TOKEN' => @auth_token)
       else
-        {}
+        headers
       end
     end
 
