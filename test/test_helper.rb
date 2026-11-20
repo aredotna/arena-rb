@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-ENV['MT_COMPAT'] = 'true'
-
 require 'minitest/autorun'
 require File.expand_path('../lib/arena.rb', __dir__)
 
@@ -17,5 +15,24 @@ VCR.configure do |c|
   end
 end
 
-require 'minitest-vcr'
-MinitestVcr::Spec.configure!
+# Wraps each spec in a VCR cassette named after its describe blocks and description,
+# e.g. test/cassettes/Arena/channel/returns_a_channel.yml.
+module VcrCassette
+  def before_setup
+    super
+    VCR.insert_cassette(cassette_name)
+  end
+
+  def after_teardown
+    VCR.eject_cassette
+    super
+  end
+
+  private
+
+  def cassette_name
+    [*self.class.name.split('::'), name.sub(/\Atest_\d+_/, '')].map { |part| part.gsub(/[^\w-]+/, '_') }.join('/')
+  end
+end
+
+Minitest::Spec.include VcrCassette
