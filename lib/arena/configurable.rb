@@ -4,8 +4,6 @@ module Arena
   module Configurable
     attr_accessor :base_domain,
                   :api_version,
-                  :use_caching,
-                  :expires_in,
                   :user_agent
 
     attr_writer :application_id,
@@ -22,8 +20,6 @@ module Arena
           application_secret
           access_token
           auth_token
-          use_caching
-          expires_in
           user_agent
         ]
       end
